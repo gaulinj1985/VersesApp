@@ -1,0 +1,654 @@
+.book-left.Mark .book-icon, .book-icon-container.Mark .book-icon{
+	background-position: -102px -2px;
+}
+
+.book-left.Luke .book-icon, .book-icon-container.Luke .book-icon{
+	background-position: -203px -2px;
+}
+
+.book-left.John .book-icon, .book-icon-container.John .book-icon{
+	background-position: -2px -91px;
+}
+
+.book-left.Acts .book-icon, .book-icon-container.Acts .book-icon{
+	background-position: -102px -91px;
+}
+
+.book-left.Romans .book-icon, .book-icon-container.Romans .book-icon{
+	background-position: -203px -91px;
+}
+
+.book-left.firstCorinthians .book-icon, .book-icon-container.firstCorinthians .book-icon{
+	background-position: -2px -179px;
+}
+
+.book-left.secondCorinthians .book-icon, .book-icon-container.secondCorinthians .book-icon{
+	background-position: -102px -179px;
+}
+
+.book-left.Galatians .book-icon, .book-icon-container.Galatians .book-icon{
+	background-position: -203px -179px;
+}
+
+.book-left.Ephesians .book-icon, .book-icon-container.Ephesians .book-icon{
+	background-position: -2px -270px;
+}
+
+.book-left.Philippians .book-icon, .book-icon-container.Philippians .book-icon{
+	background-position: -102px -270px;
+}
+
+.book-left.Colossians .book-icon, .book-icon-container.Colossians .book-icon{
+	background-position: -203px -270px;
+}
+
+.book-left.firstThessalonians .book-icon, .book-icon-container.firstThessalonians .book-icon{
+	background-position: -2px -360px;
+}
+
+.book-left.secondThessalonians .book-icon, .book-icon-container.secondThessalonians .book-icon{
+	background-position: -102px -360px;
+}
+
+.book-left.firstTimothy .book-icon, .book-icon-container.firstTimothy .book-icon{
+	background-position: -203px -360px;
+}
+
+.book-left.secondTimothy .book-icon, .book-icon-container.secondTimothy .book-icon{
+	background-position: -2px -450px;
+}
+
+.book-left.Titus .book-icon, .book-icon-container.Titus .book-icon{
+	background-position: -102px -450px;
+}
+
+.book-left.Philemon .book-icon, .book-icon-container.Philemon .book-icon{
+	background-position: -203px -450px;
+}
+
+.book-left.Hebrews .book-icon, .book-icon-container.Hebrews .book-icon{
+	background-position: -2px -540px;
+}
+
+.book-left.James .book-icon, .book-icon-container.James .book-icon{
+	background-position: -102px -540px;
+}
+
+.book-left.firstPeter .book-icon, .book-icon-container.firstPeter .book-icon{
+	background-position: -203px -540px;
+}
+
+.book-left.secondPeter .book-icon, .book-icon-container.secondPeter .book-icon{
+	background-position: -2px -630px;
+}
+
+.book-left.firstJohn .book-icon, .book-icon-container.firstJohn .book-icon{
+	background-position: -102px -630px;
+}
+
+.book-left.secondJohn .book-icon, .book-icon-container.secondJohn .book-icon{
+	background-position: -203px -630px;
+}
+
+.book-left.thirdJohn .book-icon, .book-icon-container.thirdJohn .book-icon{
+	background-position: -2px -720px;
+}
+
+.book-left.Jude .book-icon, .book-icon-container.Jude .book-icon{
+	background-position: -102px -720px;
+}
+
+.book-left.Revelation .book-icon, .book-icon-container.Revelation .book-icon{
+	background-position: -203px -720px;
+}
+
+
+
+
+
+#logged-in-container.Matthew #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #b64238;-moz-box-shadow: 0 2px #b64238;box-shadow: 0 2px #b64238;
+}
+
+	#logged-in-container.Matthew #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #b64238;-moz-box-shadow: 0 1px #b64238;box-shadow: 0 1px #b64238;
+	}
+
+#logged-in-container.Mark #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #308979;-moz-box-shadow: 0 2px #308979;box-shadow: 0 2px #308979;
+}
+
+	#logged-in-container.Mark #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #308979;-moz-box-shadow: 0 1px #308979;box-shadow: 0 1px #308979;
+	}
+
+#logged-in-container.Luke #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #D0A83F;-moz-box-shadow: 0 2px #D0A83F;box-shadow: 0 2px #D0A83F;
+}
+
+	#logged-in-container.Luke #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #D0A83F;-moz-box-shadow: 0 1px #D0A83F;box-shadow: 0 1px #D0A83F;
+	}
+
+#logged-in-container.John #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #02739B;-moz-box-shadow: 0 2px #02739B;box-shadow: 0 2px #02739B;
+}
+
+	#logged-in-container.John #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #02739B;-moz-box-shadow: 0 1px #02739B;box-shadow: 0 1px #02739B;
+	}
+
+#logged-in-container.Acts #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #33A854;-moz-box-shadow: 0 2px #33A854;box-shadow: 0 2px #33A854;
+}
+
+	#logged-in-container.Acts #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #33A854;-moz-box-shadow: 0 1px #33A854;box-shadow: 0 1px #33A854;
+	}
+
+#logged-in-container.Romans #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #922846;-moz-box-shadow: 0 2px #922846;box-shadow: 0 2px #922846;
+}
+
+	#logged-in-container.Romans #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #922846;-moz-box-shadow: 0 1px #922846;box-shadow: 0 1px #922846;
+	}
+
+#logged-in-container.firstCorinthians #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #D8633A;-moz-box-shadow: 0 2px #D8633A;box-shadow: 0 2px #D8633A;
+}
+
+	#logged-in-container.firstCorinthians #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #D8633A;-moz-box-shadow: 0 1px #D8633A;box-shadow: 0 1px #D8633A;
+	}
+
+#logged-in-container.secondCorinthians #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #344A5B;-moz-box-shadow: 0 2px #344A5B;box-shadow: 0 2px #344A5B;
+}
+
+	#logged-in-container.secondCorinthians #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #344A5B;-moz-box-shadow: 0 1px #344A5B;box-shadow: 0 1px #344A5B;
+	}
+
+#logged-in-container.Galatians #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #339B94;-moz-box-shadow: 0 2px #339B94;box-shadow: 0 2px #339B94;
+}
+
+	#logged-in-container.Galatians #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #339B94;-moz-box-shadow: 0 1px #339B94;box-shadow: 0 1px #339B94;
+	}
+
+#logged-in-container.Ephesians #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #C03137;-moz-box-shadow: 0 2px #C03137;box-shadow: 0 2px #C03137;
+}
+
+	#logged-in-container.Ephesians #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #C03137;-moz-box-shadow: 0 1px #C03137;box-shadow: 0 1px #C03137;
+	}
+
+#logged-in-container.Philippians #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #560F32;-moz-box-shadow: 0 2px #560F32;box-shadow: 0 2px #560F32;
+}
+
+	#logged-in-container.Philippians #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #560F32;-moz-box-shadow: 0 1px #560F32;box-shadow: 0 1px #560F32;
+	}
+
+#logged-in-container.Colossians #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #453764;-moz-box-shadow: 0 2px #453764;box-shadow: 0 2px #453764;
+}
+
+	#logged-in-container.Colossians #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #453764;-moz-box-shadow: 0 1px #453764;box-shadow: 0 1px #453764;
+	}
+
+#logged-in-container.firstThessalonians #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #9ABD45;-moz-box-shadow: 0 2px #9ABD45;box-shadow: 0 2px #9ABD45;
+}
+
+	#logged-in-container.firstThessalonians #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #9ABD45;-moz-box-shadow: 0 1px #9ABD45;box-shadow: 0 1px #9ABD45;
+	}
+
+#logged-in-container.secondThessalonians #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #C92B68;-moz-box-shadow: 0 2px #C92B68;box-shadow: 0 2px #C92B68;
+}
+
+	#logged-in-container.secondThessalonians #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #C92B68;-moz-box-shadow: 0 1px #C92B68;box-shadow: 0 1px #C92B68;
+	}
+
+#logged-in-container.firstTimothy #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #922828;-moz-box-shadow: 0 2px #922828;box-shadow: 0 2px #922828;
+}
+
+	#logged-in-container.firstTimothy #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #922828;-moz-box-shadow: 0 1px #922828;box-shadow: 0 1px #922828;
+	}
+
+#logged-in-container.secondTimothy #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #0E8590;-moz-box-shadow: 0 2px #0E8590;box-shadow: 0 2px #0E8590;
+}
+
+	#logged-in-container.secondTimothy #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #0E8590;-moz-box-shadow: 0 1px #0E8590;box-shadow: 0 1px #0E8590;
+	}
+
+#logged-in-container.Titus #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #B69223;-moz-box-shadow: 0 2px #B69223;box-shadow: 0 2px #B69223;
+}
+
+	#logged-in-container.Titus #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #B69223;-moz-box-shadow: 0 1px #B69223;box-shadow: 0 1px #B69223;
+	}
+
+#logged-in-container.Philemon #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #9C1D5F;-moz-box-shadow: 0 2px #9C1D5F;box-shadow: 0 2px #9C1D5F;
+}
+
+	#logged-in-container.Philemon #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #9C1D5F;-moz-box-shadow: 0 1px #9C1D5F;box-shadow: 0 1px #9C1D5F;
+	}
+
+#logged-in-container.Hebrews #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #CE773D;-moz-box-shadow: 0 2px #CE773D;box-shadow: 0 2px #CE773D;
+}
+
+	#logged-in-container.Hebrews #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #CE773D;-moz-box-shadow: 0 1px #CE773D;box-shadow: 0 1px #CE773D;
+	}
+
+#logged-in-container.James #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #A72C2C;-moz-box-shadow: 0 2px #A72C2C;box-shadow: 0 2px #A72C2C;
+}
+
+	#logged-in-container.James #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #A72C2C;-moz-box-shadow: 0 1px #A72C2C;box-shadow: 0 1px #A72C2C;
+	}
+
+#logged-in-container.firstPeter #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #4A8EA6;-moz-box-shadow: 0 2px #4A8EA6;box-shadow: 0 2px #4A8EA6;
+}
+
+	#logged-in-container.firstPeter #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #4A8EA6;-moz-box-shadow: 0 1px #4A8EA6;box-shadow: 0 1px #4A8EA6;
+	}
+
+#logged-in-container.secondPeter #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #C5B428;-moz-box-shadow: 0 2px #C5B428;box-shadow: 0 2px #C5B428;
+}
+
+	#logged-in-container.secondPeter #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #C5B428;-moz-box-shadow: 0 1px #C5B428;box-shadow: 0 1px #C5B428;
+	}
+
+#logged-in-container.firstJohn #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #287B33;-moz-box-shadow: 0 2px #287B33;box-shadow: 0 2px #287B33;
+}
+
+	#logged-in-container.firstJohn #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #287B33;-moz-box-shadow: 0 1px #287B33;box-shadow: 0 1px #287B33;
+	}
+
+#logged-in-container.secondJohn #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #6B2E3F;-moz-box-shadow: 0 2px #6B2E3F;box-shadow: 0 2px #6B2E3F;
+}
+
+	#logged-in-container.secondJohn #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #6B2E3F;-moz-box-shadow: 0 1px #6B2E3F;box-shadow: 0 1px #6B2E3F;
+	}
+
+#logged-in-container.thirdJohn #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #A671A0;-moz-box-shadow: 0 2px #A671A0;box-shadow: 0 2px #A671A0;
+}
+
+	#logged-in-container.thirdJohn #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #A671A0;-moz-box-shadow: 0 1px #A671A0;box-shadow: 0 1px #A671A0;
+	}
+
+#logged-in-container.Jude #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #5A9642;-moz-box-shadow: 0 2px #5A9642;box-shadow: 0 2px #5A9642;
+}
+
+	#logged-in-container.Jude #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #5A9642;-moz-box-shadow: 0 1px #5A9642;box-shadow: 0 1px #5A9642;
+	}
+
+#logged-in-container.Revelation #chapters-left-nav .chapter-link.selected{
+	-webkit-box-shadow: 0 2px #427685;-moz-box-shadow: 0 2px #427685;box-shadow: 0 2px #427685;
+}
+
+	#logged-in-container.Revelation #chapters-left-nav .chapter-link.selected:active{
+		-webkit-box-shadow: 0 1px #427685;-moz-box-shadow: 0 1px #427685;box-shadow: 0 1px #427685;
+	}
+
+
+.activity-icon.Matthew{
+	background-position: -1px -1px;
+}
+
+.activity-icon.Mark{
+	background-position: -60px -1px;
+}
+
+.activity-icon.Luke{
+	background-position: -120px -1px;
+}
+
+.activity-icon.John{
+	background-position: -1px -53px;
+}
+
+.activity-icon.Acts{
+	background-position: -60px -53px;
+}
+
+.activity-icon.Romans{
+	background-position: -120px -53px;
+}
+
+.activity-icon.firstCorinthians{
+	background-position: -1px -105px;
+}
+
+.activity-icon.secondCorinthians{
+	background-position: -60px -105px;
+}
+
+.activity-icon.Galatians{
+	background-position: -120px -105px;
+}
+
+.activity-icon.Ephesians{
+	background-position: -1px -158px;
+}
+
+.activity-icon.Philippians{
+	background-position: -60px -158px;
+}
+
+.activity-icon.Colossians{
+	background-position: -120px -158px;
+}
+
+.activity-icon.firstThessalonians{
+	background-position: -1px -211px;
+}
+
+.activity-icon.secondThessalonians{
+	background-position: -60px -211px;
+}
+
+.activity-icon.firstTimothy{
+	background-position: -120px -211px;
+}
+
+.activity-icon.secondTimothy{
+	background-position: -1px -263px;
+}
+
+.activity-icon.Titus{
+	background-position: -60px -263px;
+}
+
+.activity-icon.Philemon{
+	background-position: -120px -263px;
+}
+
+.activity-icon.Hebrews{
+	background-position: -1px -316px;
+}
+
+.activity-icon.James{
+	background-position: -60px -316px;
+}
+
+.activity-icon.firstPeter{
+	background-position: -120px -316px;
+}
+
+.activity-icon.secondPeter{
+	background-position: -1px -368px;
+}
+
+.activity-icon.firstJohn{
+	background-position: -60px -368px;
+}
+
+.activity-icon.secondJohn{
+	background-position: -120px -368px;
+}
+
+.activity-icon.thirdJohn{
+	background-position: -1px -422px;
+}
+
+.activity-icon.Jude{
+	background-position: -60px -422px;
+}
+
+.activity-icon.Revelation{
+	background-position: -120px -422px;
+}
+
+#badges .badge.Mark, .complete-overlay .complete-win.Mark{
+	background-position: -141px -11px;
+}
+
+#badges .badge.Luke, .complete-overlay .complete-win.Luke{
+	background-position: -269px -11px;
+}
+
+#badges .badge.John, .complete-overlay .complete-win.John{
+	background-position: -398px -11px;
+}
+
+#badges .badge.Acts, .complete-overlay .complete-win.Acts{
+	background-position: -527px -11px;
+}
+
+#badges .badge.Romans, .complete-overlay .complete-win.Romans{
+	background-position: -651px -11px;
+}
+
+#badges .badge.firstCorinthians, .complete-overlay .complete-win.firstCorinthians{
+	background-position: -12px -131px;
+}
+
+#badges .badge.secondCorinthians, .complete-overlay .complete-win.secondCorinthians{
+	background-position: -141px -131px;
+}
+
+#badges .badge.Galatians, .complete-overlay .complete-win.Galatians{
+	background-position: -269px -131px;
+}
+
+#badges .badge.Ephesians, .complete-overlay .complete-win.Ephesians{
+	background-position: -398px -131px;
+}
+
+#badges .badge.Philippians, .complete-overlay .complete-win.Philippians{
+	background-position: -527px -131px;
+}
+
+#badges .badge.Colossians, .complete-overlay .complete-win.Colossians{
+	background-position: -651px -131px;
+}
+
+#badges .badge.firstThessalonians, .complete-overlay .complete-win.firstThessalonians{
+	background-position: -12px -251px;
+}
+
+#badges .badge.secondThessalonians, .complete-overlay .complete-win.secondThessalonians{
+	background-position: -141px -251px;
+}
+
+#badges .badge.firstTimothy, .complete-overlay .complete-win.firstTimothy{
+	background-position: -269px -251px;
+}
+
+#badges .badge.secondTimothy, .complete-overlay .complete-win.secondTimothy{
+	background-position: -398px -251px;
+}
+
+#badges .badge.Titus, .complete-overlay .complete-win.Titus{
+	background-position: -527px -251px;
+}
+
+#badges .badge.Philemon, .complete-overlay .complete-win.Philemon{
+	background-position: -651px -251px;
+}
+
+#badges .badge.Hebrews, .complete-overlay .complete-win.Hebrews{
+	background-position: -12px -371px;
+}
+
+#badges .badge.James, .complete-overlay .complete-win.James{
+	background-position: -141px -371px;
+}
+
+#badges .badge.firstPeter, .complete-overlay .complete-win.firstPeter{
+	background-position: -269px -371px;
+}
+
+#badges .badge.secondPeter, .complete-overlay .complete-win.secondPeter{
+	background-position: -398px -371px;
+}
+
+#badges .badge.firstJohn, .complete-overlay .complete-win.firstJohn{
+	background-position: -527px -371px;
+}
+
+#badges .badge.secondJohn, .complete-overlay .complete-win.secondJohn{
+	background-position: -651px -371px;
+}
+
+#badges .badge.thirdJohn, .complete-overlay .complete-win.thirdJohn{
+	background-position: -12px -491px;
+}
+
+#badges .badge.Jude, .complete-overlay .complete-win.Jude{
+	background-position: -141px -491px;
+}
+
+#badges .badge.Revelation, .complete-overlay .complete-win.Revelation{
+	background-position: -269px -491px;
+}
+
+#badges .badge.finished{
+	background-position: -398px -491px;
+}
+
+
+
+
+
+
+
+.activity-badge.Mark{
+	background-position: -74px -4px;
+}
+
+.activity-badge.Luke{
+	background-position: -138px -4px;
+}
+
+.activity-badge.John{
+	background-position: -201px -4px;
+}
+
+.activity-badge.Acts{
+	background-position: -265px -4px;
+}
+
+.activity-badge.Romans{
+	background-position: -327px -4px;
+}
+
+.activity-badge.firstCorinthians{
+	background-position: -10px -63px;
+}
+
+.activity-badge.secondCorinthians{
+	background-position: -74px -63px;
+}
+
+.activity-badge.Galatians{
+	background-position: -138px -63px;
+}
+
+.activity-badge.Ephesians{
+	background-position: -201px -63px;
+}
+
+.activity-badge.Philippians{
+	background-position: -265px -63px;
+}
+
+.activity-badge.Colossians{
+	background-position: -327px -63px;
+}
+
+.activity-badge.firstThessalonians{
+	background-position: -10px -123px;
+}
+
+.activity-badge.secondThessalonians{
+	background-position: -74px -123px;
+}
+
+.activity-badge.firstTimothy{
+	background-position: -138px -123px;
+}
+
+.activity-badge.secondTimothy{
+	background-position: -201px -123px;
+}
+
+.activity-badge.Titus{
+	background-position: -265px -123px;
+}
+
+.activity-badge.Philemon{
+	background-position: -327px -123px;
+}
+
+.activity-badge.Hebrews{
+	background-position: -10px -182px;
+}
+
+.activity-badge.James{
+	background-position: -74px -182px;
+}
+
+.activity-badge.firstPeter{
+	background-position: -138px -182px;
+}
+
+.activity-badge.secondPeter{
+	background-position: -201px -182px;
+}
+
+.activity-badge.firstJohn{
+	background-position: -265px -182px;
+}
+
+.activity-badge.secondJohn{
+	background-position: -327px -182px;
+}
+
+.activity-badge.thirdJohn{
+	background-position: -10px -242px;
+}
+
+.activity-badge.Jude{
+	background-position: -74px -242px;
+}
+
+.activity-badge.Revelation{
+	background-position: -138px -242px;
+}
+
+.activity-badge.finished{
+	background-position: -201px -242px;
+}

@@ -1,0 +1,2216 @@
+
+<head>
+  	<title>Verses - Free online bible learning</title>
+  	<meta name="viewport" content="width=device-width, user-scalable=no">
+  	<meta name="description" content="The free online bible learning game. Listen, learn and track your progress of the New Testament">
+	<meta name="keywords" content="Bible,New testament,Audio book,Game,Learning">
+  	<link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+  	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+  	<script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
+  	<script type="text/javascript" src="https://connect.facebook.net/en_US/all.js"></script>
+  	<script type="text/javascript" src="/js/Chart.min.js"></script>
+	<!--[if IE]>
+	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-47025987-1', 'joinverses.com');
+	  ga('send', 'pageview');
+
+	  /* MixPanel */
+	  (function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+		  for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+		  mixpanel.init("c037ba6a0fee8a980aaa9ba89e4f66e4");
+	   /* MixPanel End */
+	</script>
+</head>
+
+<body>
+	
+  	{{> outer_tmpl}}
+	 	<div id="site-container">
+			
+		</div>
+	{{> footer_tmpl}}
+</body>
+
+<template name="outer_tmpl">
+	{{#if loaded}}
+		<header>
+			<div id="header-container">
+				
+				<!--{{loginButtons align="right"}}-->
+				{{#if currentUser}}
+				<a href="#" class="logo account-logged-in"></a>
+				<a href="#" class="mobile-menu closed"></a>
+				<form id="top-search-user">
+					<input id="top-search-input" type="text" placeholder="Find a user" />
+					<a href="#" class="top-search-icon"></a>
+				</form>
+				<ul class="store-container">
+					<li><a href="#" id="item-store">{{#if shopNotification}}<span>{{shopNotification}}</span>{{/if}}</a>
+						<span class="shop-contain"></span>
+					</li>
+				</ul>
+				<ul class="store-container-mobile">
+					<li><a href="#" id="item-store" class="closed">{{#if shopNotification}}<span>{{shopNotification}}</span>{{/if}}</a></li>
+				</ul>
+				<div id="user-account-container" class="account-logged-in">
+					<nav>
+						<ul>
+							<li class="profile-contain"><a href="" class="profile-btn"><span class="arrow-down"></span><span class="account-btn"><img src="{{avatar}}" /></span></a>
+								{{> drop_menu_tmpl}}
+							</li>
+						</ul>
+					</nav>
+				</div>
+				{{> total_points_tmpl}}
+				{{> total_chapters_complete_tmpl}}
+				{{> total_streak_tmpl}}
+				{{else}}
+				<a href="#" class="logo"></a>
+					<div id="user-account-container">
+						<a href="#" class="sign-in-btn gray-gradient">Sign in</a>
+						<a href="#" class="sign-up-btn blue-gradient">Sign up</a>
+					</div>
+				{{/if}}
+			</div>
+		</header>
+	{{else}}
+		{{> loading_outer_tmpl}}
+	{{/if}}
+	
+	<div class="site-cover"></div>
+</template>
+
+<template name="loading_outer_tmpl">
+	<div class="loading-outer">
+		<div class="spinner">
+		  <div class="bounce1">
+		  	<div class="half"></div>
+		  </div>
+		  <div class="bounce2">
+		  	<div class="half"></div>
+		  </div>
+		  <div class="bounce3">
+		  	<div class="half"></div>
+		  </div>
+		</div>
+	</div>
+</template>
+
+<template name="landing_outer_tmpl">
+	{{#if loaded}}
+		<header class="landing-header">
+			<div id="header-container">
+				<a href="#" class="logo"></a>
+				<div id="user-account-container">
+					<a href="#" class="sign-in-btn gray-gradient">Sign in</a>
+					<a href="" class="sign-up-btn blue-gradient">Sign up</a>
+				</div>
+			</div>
+		</header>
+	{{else}}
+		{{> loading_outer_tmpl}}
+	{{/if}}
+	
+	<div class="site-cover"></div>
+</template>
+
+<template name="drop_menu_tmpl">
+	<ul>
+		<li><a href="/" class="home"><span class="home"></span>Home</a></li>
+		<li><a href="/profile" class="my-profile first"><span class="profile"></span>Profile</a></li>
+		<li><a href="/account" class="my-settings"><span class="settings"></span>Settings</a></li>
+		{{#if donationsExist}}
+			<li><a href="/billing" class="my-billing"><span class="billing"></span>Donated</a></li>
+		{{/if}}
+		<li><a href="/search" class="my-search"><span class="search"></span>Search</a></li>
+		<li><a href="#" class="sign-out-btn last"><span class="sign-out"></span>Sign out</a></li>
+	</ul>
+</template>
+
+<template name="item_dropdown_tmpl">
+	{{#with points}}
+	<ul class="item-store-drop">
+		<li><span class="item-title"></span></li>
+		<li>
+			<a href="#" class="item item-coins not-purchased">
+				<strong><span></span></strong>
+				<i>500 coins</i>
+				<em>Cost: <b></b> 5</em>
+			</a>
+			<span class="confirm-container">
+				<a href="#" class="confirm{{#if enoughStarsCoin}} green-gradient{{else}} not-enough{{/if}} confirm-coins" data-confirm-item="confirm-coins">{{#if enoughStarsCoin}}Confirm{{else}}Not enough stars{{/if}}</a>
+			</span> 
+		</li>
+		{{#if matthewComplete}}
+			<li>
+				<a href="#" class="item item-question-revive not-purchased">
+					<strong><span></span></strong>
+					<i>5x Question revive</i>
+					<em>Cost: <b></b> 15</em>
+				</a>
+				<span class="confirm-container">
+					<a href="#" class="confirm {{#if enoughStarsRevive}} green-gradient{{else}} not-enough{{/if}} confirm-revive" data-confirm-item="confirm-revive">{{#if enoughStarsRevive}}Confirm{{else}}Not enough stars{{/if}}</a>
+				</span> 
+			</li>
+		{{else}}
+			<li>
+				<span class="item-locked">
+					<strong></strong>
+					<em>Complete <b>Matthew</b> to reveal this item</em>
+				</span>
+			</li>
+		{{/if}}
+		{{#if threeBooks}}
+			<li>
+				<a href="#" class="item item-life-upgrade{{#if lifeExists}} purchased{{else}} not-purchased{{/if}}">
+					<strong><span></span></strong>
+					<i>1 Extra life</i>
+					<em>{{#if lifeExists}}Purchased{{else}}Cost: <b></b> 25{{/if}}</em>
+				</a>
+				<span class="confirm-container">
+					<a href="#" class="confirm {{#if enoughStarsLife}} green-gradient{{else}} not-enough{{/if}} confirm-life-upgrade" data-confirm-item="confirm-life-upgrade">{{#if enoughStarsLife}}Confirm{{else}}Not enough stars{{/if}}</a>
+				</span> 
+			</li>
+		{{else}}
+			<li>
+				<span class="item-locked">
+					<strong></strong>
+					<em>Complete <b>3 books</b> to reveal this item</em>
+				</span>
+			</li>
+		{{/if}}
+		{{#if nineBooks}}
+			<li class="hide">
+				<a href="#" class="item item-show-questions{{#if questionsExists}} purchased{{else}} not-purchased{{/if}}">
+					<strong><span></span></strong>
+					<i>Show all questions</i>
+					<em>{{#if questionsExists}}Purchased{{else}}Cost: <b></b> 50{{/if}}</em>
+				</a>
+				<span class="confirm-container">
+					<a href="#" class="confirm {{#if enoughStarsQuestions}} green-gradient{{else}} not-enough{{/if}} confirm-show-questions" data-confirm-item="confirm-show-questions">{{#if enoughStarsQuestions}}Confirm{{else}}Not enough stars{{/if}}</a>
+				</span> 
+			</li>
+		{{else}}
+			<li class="hide">
+				<span class="item-locked">
+					<strong></strong>
+					<em>Complete <b>9 books</b> to reveal this item</em>
+				</span>
+			</li>
+		{{/if}}
+		{{#if twelveBooks}}
+			<li class="hide">
+				<a href="#" class="item item-unlimited-audio{{#if audioExists}} purchased{{else}} not-purchased{{/if}}">
+					<strong><span></span></strong>
+					<i>No audio coin cap</i>
+					<em>{{#if audioExists}}Purchased{{else}}Cost: <b></b> 75{{/if}}</em>
+				</a>
+				<span class="confirm-container">
+					<a href="#" class="confirm {{#if enoughStarsAudio}} green-gradient{{else}} not-enough{{/if}} confirm-unlimited-audio" data-confirm-item="confirm-unlimited-audio">{{#if enoughStarsAudio}}Confirm{{else}}Not enough stars{{/if}}</a>
+				</span> 
+			</li>
+		{{else}}
+			<li class="hide">
+				<span class="item-locked">
+					<strong></strong>
+					<em>Complete <b>12 books</b> to reveal this item</em>
+				</span>
+			</li>
+		{{/if}}
+		<li class="show-all">Show all</li>
+	</ul>
+	{{/with}}
+</template>
+
+<template name="total_streak_tmpl">
+	<div class="total-points streak-points" data-popup="Daily streak"><span class="streak"></span>{{streak}}</div>
+</template>
+
+<template name="total_points_tmpl">
+	<div class="total-points" data-popup="Points"><span class="coin"></span>{{points}}</div>
+</template>
+
+<template name="total_chapters_complete_tmpl">
+	<div class="total-points star-points" data-popup="Stars"><span class="star"></span>{{stars}}</div>
+</template>
+
+<template name="mobile_menu_tmpl">
+	<div class="left-menu-top">
+		<div class="side-user-image">
+			<img src="https://s3.amazonaws.com/versesavatars/{{currentUser.profile.avatar}}" alt="{{currentUser.username}} profile" />
+		</div>
+		<strong>{{#if currentUser.profile.name}}{{currentUser.profile.name}}{{else}}{{currentUser.username}}{{/if}}</strong>
+		<span>{{followerCount}} followers &nbsp;&bull;&nbsp; {{followingCount}} following</span>
+	</div>
+	{{> drop_menu_tmpl}}
+</template>
+
+<template name="footer_tmpl">
+	<footer>
+		<div id="footer-container">
+			<div id="copyright"><span>© 2014 Verses, in association with <a href="http://www.bible.is" target="_blank">Bible.is</a>. All rights reserved.</span>
+				<a href="/" class="footer-logo"></a></div>
+
+			<div id="footer-nav">
+				<ul>
+					<!--<li><a href="">FAQ</a></li>-->
+					<li><a href="/privacy">Privacy policy</a></li>
+					<!--<li><a href="/donate">Donate</a></li>-->
+				</ul>
+			</div>
+		</div>
+		<div id="fb-root"></div>
+	</footer>
+</template>
+
+<template name="landing_tmpl">
+	{{> landing_outer_tmpl}}
+	{{scroll}}
+		<div class="top-banner">
+			<div class="top-banner-img">
+				<div class="top-content">
+					<div class="intro-text">
+						<h1>The free online bible learning game</h1>
+						<h2>Enjoy the New Testament from start to finish while gaining points and receiving rewards.</h2>
+					</div>
+					<div class="top-title-image"></div>
+				</div>
+			</div>
+		</div>
+		<div class="post-banner">
+			<div class="upper-post">
+				<h3>Listen, learn and track your progress of the New Testament</h3>
+				<p>Our goal is to help keep you motivated during your progress through the new testament.</p>
+			</div>
+			<a href="#" class="sign-up-landing top-sign blue-gradient">Sign up</a>
+		</div>
+		<div class="content first">
+			<div class="content-inner">
+				<div class="feature">
+					<span class="heart"></span>
+					<p>Complete the audio and answer questions to receive rewards.</p>
+				</div>
+				<div class="feature">
+					<span class="coin"></span>
+					<p>The more time spent listening to the audio books the more points you earn.</p>
+				</div>
+				<div class="feature">
+					<span class="research"></span>
+					<p>Complete entire audio books to unlock helpful items.</p>
+				</div>
+			</div>
+		</div>
+		<div class="second-banner"></div>
+		<div class="content second">
+			<h2>Surprising Stats on Who Reads the Bible from Start to Finish</h2>
+			<p>Based on an analysis from the <a href="http://www.barna.org/images/stories/bu-060413-barna-books-pt3-web.jpg" target="_blank">Barna Group</a> and featured on <a href="http://www.christianitytoday.com/gleanings/2013/june/surprising-stats-on-who-reads-bible-from-start-to-finish.html" target="_blank">Christianity Today</a> </p>
+			<div class="chart-container">
+				<span class="chart one" data-percent="0">
+					<span class="percent"><span class="counter" data-from="0" data-to="20">0</span>%</span>
+					<p>Of all adults have read the Bible start to finish</p>
+				</span>
+				<span class="chart two" data-percent="0">
+					<span class="percent"><span class="counter" data-from="0" data-to="61">0</span>%</span>
+					<p>Of practicing Christians have read the Bible start to finish</p>
+				</span>
+				<span class="chart three" data-percent="0">
+					<span class="percent"><span class="counter" data-from="0" data-to="18">0</span>%</span>
+					<p>Of people of faith other than Christianity have read the Bible start to finish</p>
+				</span>
+				<span class="chart four" data-percent="0">
+					<span class="percent"><span class="counter" data-from="0" data-to="9">0</span>%</span>
+					<p>Of those with no faith have read the Bible start to finish</p>
+				</span>
+			</div>
+		</div>
+		<div class="third-banner"></div>
+		<div class="content third">
+			<h2>Join verses now</h2>
+			<p>It’s completely free</p>
+			<a href="#" class="sign-up-landing bottom-sign blue-gradient">Sign up</a>
+		</div>
+	{{> footer_tmpl}}
+</template>
+
+<template name="landing_email_tmpl">
+	<p>Still developing</p>
+	<span>We're not quite finished with development. Enter your email and we'll let you know when we launch.</span>
+	<div class="email-signup-container">
+		<div class="email-notification"></div>
+		<input class="email-input" placeholder="Email address">
+		<a class="email-send blue-gradient" href="#">Send</a>
+	</div>
+</template>
+
+<template name="donate_tmpl">
+	<div id="donate-top">
+		<h1>Help us keep Verses free</h1>
+		<h2>We run purely on donations. If you enjoy the app and find it useful a small donation can go a long way.</h2>
+	</div>
+	<div id="donation-container" class="donate-containers white-content-box">
+		{{> donate_form_tmpl}}
+	</div>
+</template>
+
+<template name="donate_form_tmpl">
+	<h3>Make a donation</h3>
+	<h4>I'd like to make a donation of</h4>
+	<div id="amount-container">
+		<input type="text" id="donation-amount" value="5.00" />
+		<span class="denomination">$</span>
+	</div>
+	<div class="payment-radio">
+		<span>single</span><input type="radio" name="payment-interval" value="single" checked>
+		<span class="recurring">recurring</span><input type="radio" name="payment-interval" value="recurring">
+	</div>
+	<a href="#" class="donate-now blue-gradient">Proceed</a>
+	<div class="form-load"><img src="/images/loader_white.gif" /></div>
+</template>
+
+<template name="credit_form_tmpl">
+	{{#if loggedIn}}
+		<h3>Make a donation</h3>
+		<h4>Donating ${{donateAmount}} <span>(<a href="#" class="change">change</a>)</span></h4>
+		{{#if custId}}
+		<div id="card-info-container">
+			{{#with creditCardInfo}}
+				<table class="card-info white-content-box">
+					<tr>
+						<td class="left">Card Type</td>
+						<td class="right">{{cardType}}</td>
+					</tr>
+					<tr>
+						<td class="left">Card Number</td>
+						<td class="right">**** **** **** {{cardNum}}</td>
+					</tr>
+					<tr>
+						<td class="left">Expiry</td>
+						<td class="right">{{cardExpMonth}}/{{cardExpYear}}</td>
+					</tr>
+				</table>
+				<a href="#" class="change-card">Change card</a>
+			{{/with}}
+		</div>
+		<input type="hidden" id="form-complete" />
+		<a href="#" class="submit-payment existing blue-gradient">Donate</a>
+		<div class="form-load"><img src="/images/loader_white.gif" /></div>
+		{{else}}
+			<form action="" method="POST" id="payment-form">
+				<div id="form-container">
+				  <span class="payment-errors"></span>
+				  {{#if currentUser}}
+					  <div class="form-row">
+					      <label>
+					      <span>Name on card</span>
+					      <input type="text" size="20" class="full-name" data-stripe="name" placeholder="Name on card"/>
+					      </label>
+			  	      </div>
+				  {{/if}}
+				  <div class="form-row">
+				    <label>
+				      <span>Card Number</span>
+				      <input type="text" size="20" class="card-number" data-stripe="number" placeholder="Card Number"/>
+				    </label>
+				    <input type="text" size="4" class="card-cvc" data-stripe="cvc" placeholder="CVC" />
+				  </div>
+
+				  <div class="form-row bottom">
+				    <label>
+				      <span>Expiration (MM/YYYY)</span>
+				      <input type="text" size="2" class="card-month" data-stripe="exp-month" placeholder="MM"/>
+				    </label>
+				    <span class="slash"> / </span>
+				    <input type="text" size="4" class="card-year" data-stripe="exp-year" placeholder="YYYY"/>
+				  </div>
+				</div>
+				<input type="hidden" id="form-complete" />
+			    <a href="#" class="submit-payment new blue-gradient">Donate</a>
+			    <div class="form-load"><img src="/images/loader_white.gif" /></div>
+			</form>
+		{{/if}}
+	{{else}}
+		<h3>Not logged in</h3>
+		<h4>Sign in or donate anonymously</h4>
+		<a href="#" class="donate-login blue-gradient">Sign in</a>
+		<a href="#" class="donate-anon gray-gradient">Donate anonymously</a>
+	{{/if}}
+</template>
+
+<template name="donate_thanks_tmpl">
+	{{#if id}}
+	<h2 class="view">Thank you!</h2>
+	{{else}}
+	<h2>Thank you!</h2>
+	{{/if}}
+	{{#if id}}
+		<a href="/i/{{id}}" class="view-invoice blue-gradient">View invoice</a>
+	{{/if}}
+</template>
+
+<template name="privacy_tmpl">
+	<div id="logged-in-container" class="privacy">
+		<div id="top-container">
+			<h1>Privacy policy</h1>
+		</div>
+		<div id="privacy-container">
+			<p>This Privacy Policy governs the manner in which Verses collects, uses, maintains and discloses information collected from users (each, a "User") of the <a href="http://www.joinverses.com">http://www.joinverses.com</a> website ("Site"). This privacy policy applies to the Site and all products and services offered by Verses.</p>
+
+			<p><b>Personal identification information</b></p>
+
+			<p>We may collect personal identification information from Users in a variety of ways, including, but not limited to, when Users visit our site, register on the site, fill out a form, and in connection with other activities, services, features or resources we make available on our Site. Users may be asked for, as appropriate, name, email address. We will collect personal identification information from Users only if they voluntarily submit such information to us. Users can always refuse to supply personally identification information, except that it may prevent them from engaging in certain Site related activities.</p>
+
+			<p><b>Non-personal identification information</b></p>
+
+			<p>We may collect non-personal identification information about Users whenever they interact with our Site. Non-personal identification information may include the browser name, the type of computer and technical information about Users means of connection to our Site, such as the operating system and the Internet service providers utilized and other similar information.</p>
+
+			<p><b>Web browser cookies</b></p>
+
+			<p>Our Site may use "cookies" to enhance User experience. User's web browser places cookies on their hard drive for record-keeping purposes and sometimes to track information about them. User may choose to set their web browser to refuse cookies, or to alert you when cookies are being sent. If they do so, note that some parts of the Site may not function properly.</p>
+
+			<p><b>How we use collected information</b></p>
+
+			<p>Verses may collect and use Users personal information for the following purposes:<br>
+			<ul>
+			<li><i>To improve customer service</i><br>
+				Information you provide helps us respond to your customer service requests and support needs more efficiently.</li>
+			<li><i>To improve our Site</i><br>
+				We may use feedback you provide to improve our products and services.</li>
+			<li><i>To send periodic emails</i><br>
+			If User decides to opt-in to our mailing list, they will receive emails that may include company news, updates, related product or service information, etc. If at any time the User would like to unsubscribe from receiving future emails, they may do so by contacting us via our Site.</li>
+			</ul></p>
+
+			<p><b>How we protect your information</b></p>
+
+			<p>We adopt appropriate data collection, storage and processing practices and security measures to protect against unauthorized access, alteration, disclosure or destruction of your personal information, username, password, transaction information and data stored on our Site.</p>
+
+			<p><b>Sharing your personal information</b></p>
+
+			<p>We do not sell, trade, or rent Users personal identification information to others. We may share generic aggregated demographic information not linked to any personal identification information regarding visitors and users with our business partners, trusted affiliates and advertisers for the purposes outlined above.</p>
+
+			<p><b>Changes to this privacy policy</b></p>
+
+			<p>Verses has the discretion to update this privacy policy at any time. When we do, we will revise the updated date at the bottom of this page. We encourage Users to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect. You acknowledge and agree that it is your responsibility to review this privacy policy periodically and become aware of modifications.</p>
+
+			<p><b>Your acceptance of these terms</b></p>
+
+			<p>By using this Site, you signify your acceptance of this policy. If you do not agree to this policy, please do not use our Site. Your continued use of the Site following the posting of changes to this policy will be deemed your acceptance of those changes.</p>
+
+			<p><b>Contacting us</b></p>
+
+			<p>If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at: info@joinverses.com</p>
+			<p>This document was last updated on December 02, 2013</p>
+		</div>
+	</div>
+</template>
+
+
+<template name="sign_in_overlay_tmpl">
+	<div id="sign-in-container">
+		<p>Sign in to Verses</p>
+		{{#if loggingIn}} 
+		<div id="sign-in-loading">
+			<img src="/images/loader.gif" width="25" />
+		</div>
+		{{else}}
+		<form name="sign-in-form" id="sign-in-form">
+			<span class="error">{{errorMsg}}</span>
+			<a href="#" class="fb-login blue-gradient">Sign in with facebook</a>
+			<strong class="overlay-divider">OR</strong>
+			<input type="text" class="sign-in-input" placeholder="Email" id="email" />
+			<input type="password" class="sign-in-input" placeholder="Password" id="password" />
+			<input type="submit" class="submit-btn gray-gradient" value="Sign In" />
+		</form>
+		<span><!--<a href="#" class="create-account">Create account</a>--><a href="#" class="forgot-password">Forgot password</a></span>
+		{{/if}}
+	</div>
+</template>
+
+<template name="sign_up_overlay_tmpl">
+	<p>Sign up for Verses</p>
+	<form name="sign-up-form" id="sign-up-form">
+		<span class="error">{{errorMsg}}</span>
+		<a href="#" class="fb-login blue-gradient">Sign in with facebook</a>
+		<strong class="overlay-divider">OR</strong>
+		<input type="text" class="sign-up-input" placeholder="Email" id="email" />
+		<input type="text" class="sign-up-input" placeholder="Username" id="username" />
+		<input type="password" class="sign-up-input" placeholder="Password" id="password" />
+		<input type="submit" class="submit-btn gray-gradient" value="Sign Up" />
+	</form>
+</template>
+
+<template name="forgot_password_overlay_tmpl">
+	{{#if resetPassword}}
+		<p>New password</p>
+		{{#if loading}}
+			<div class="loading">
+				<img src="/images/loader.gif" width="25" />
+			</div>
+		{{else}}
+			<span class="error">{{errorMsg}}</span>
+			<form name="new-password" id="new-password">
+				<input type="password" placeholder="New password" id="new-password-password" />
+				<input type="submit" class="submit-btn blue-gradient" value="Reset Password" />
+			</form>
+		{{/if}}
+	{{else}}
+		<p>Forgot Password</p>
+		{{#if loading}}
+			<div class="loading">
+				<img src="/images/loader.gif" width="25" />
+			</div>
+		{{else}}
+			{{#if emailSent}}
+				<span class="email-sent">Email sent</span>
+			{{else}}
+				<form name="forgot-password-form" id="forgot-password-form">
+					<input type="text" placeholder="Email" id="email" />
+					<input type="submit" class="submit-btn blue-gradient" value="Reset Password" />
+				</form>
+			{{/if}}
+		{{/if}}
+	{{/if}}
+</template>
+
+<template name="email_list_tmpl">
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Verses</title>
+	<style type="text/css">
+	p { font-size: 14px; font-family: Arial,Helvetica,sans-serif; margin-bottom: 12px; margin-top: 0px; padding: 0px; color: #969696; line-height: 18px; text-align: center;}
+	em{font-size: 10px; font-style: normal; color: #9B9C99; font-family: Arial,Helvetica,sans-serif;}
+	a { color: #4D5B61; text-decoration: underline; }
+	a:hover { color: #09F !important; text-decoration: underline !important; }
+	h3 { color: #858585  !important; font-size: 28px; font-family: Arial,Helvetica,sans-serif; margin-bottom: 15px; margin-top: 5px; padding: 0px; font-weight: normal; text-align: center;}
+	</style>
+	</head>
+	<body style="margin: 0px; background-color: #ffffff; background-image: url(http://joinverses.com/images/bg.jpg)" marginheight="0" topmargin="0" marginwidth="0" leftmargin="0" bgcolor="#ffffff">
+	<!--100% body table-->
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	    <tr>
+	        <td>
+	            
+	            <!--email content-->
+	            <table width="93%" border="0" align="center" cellpadding="0" cellspacing="0" >
+	                <tr>
+	                    <td height="40"></td>
+	                </tr>
+	                <tr>
+	                    <td style="background-color: #eeeeee; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px;">
+	                        <repeater>
+	                        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+	                            <tr>
+	                                <td valign="top" width="65%" style="background-color: #eeeeee; border-top-left-radius: 5px; -moz-border-top-left-radius: 5px; -webkit-border-top-left-radius: 5px; -khtml-border-top-left-radius: 5px; border-top-right-radius: 5px; -moz-border-top-right-radius: 5px; -webkit-border-top-right-radius: 5px; -khtml-border-top-right-radius: 5px; padding-top:46px; text-align: center;">
+	                                    <img src="http://joinverses.com/images/logo-large.png" alt="Verses" />
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td valign="top" width="65%" align="center" style="text-align:center">
+	                                	<img src="http://joinverses.com/images/email-coming-soon.png" alt="Screenshot" style="width:90%; max-width:958px" />
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td valign="top" align="center">
+	                                	 <table width="75%" border="0" align="center" cellpadding="0" cellspacing="0" >
+							                <tr>
+							                    <td>
+							                    	<h3><singleline label="Title" repeatertitle="true">Coming Soon</singleline></h3>
+	                                    			<multiline label="Description"><p>Thanks for signing up for Verses. We're just putting the final touches on the app and should be up and running shortly. We'll send you an email reminder as soon as we're ready.</p><p>Regards,<br />The Verses Team</p></multiline>
+	                                			</td>
+							                </tr>
+							            </table>
+	                                    
+	                                </td>
+	                            </tr>
+	                        </table>
+	                        </repeater>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td height="40" >
+	                        <table width="100%" border="0" cellspacing="0" cellpadding="10">
+	                            <tr>
+	                                <td>
+	                                    <em>© 2013 Verses Inc. Toronto, On</em>
+	                                </td>
+	                            </tr>
+	                        </table>
+	                    </td>
+	                </tr>
+	            </table>
+	            <!--/email content-->
+	        </td>
+	    </tr>
+	</table>
+	<!--/100% body table-->
+	</body>
+	</html>
+</template>
+
+<template name="gift_overlay_tmpl">
+	<img src="{{giftImg}}" />
+	<h1>{{#if spent}}Reward received{{else}}Congratulations!{{/if}}</h1>
+	<h2>Your dedication has earned you {{amount}} coins</h2>
+</template>
+
+<template name="not_found_tmpl">
+	<body>
+		<div id="page-not-found">
+			<h1>404</h1>
+			<h2>Oops! This page doesn't exist</h2>
+		</div>
+	</body>
+</template>
+
+<template name="email_ver_alert_tmpl">
+	<div class="email-verified">Your email has beed verifed<span class="close"></span></div>
+</template>
+
+<template name="email_sent_alert_tmpl">
+	<div class="email-verified">Verification email has been sent<span class="close"></span></div>
+</template>
+
+<template name="account_tmpl">
+	<div id="logged-in-container">
+		{{#if emailVerified}}{{> email_ver_alert_tmpl}}{{/if}}
+		{{#if emailSent}}{{> email_sent_alert_tmpl}}{{/if}}
+
+		<div id="account-container" class="{{pageName}}">
+			{{> account_left_tmpl}}
+			<div id="right-container">
+				{{> account_right_tmpl}}
+				<div id="lower-right">
+					{{> account_info_tmpl}}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+
+<template name="account_left_tmpl">
+<div id="left-container">
+	<div id="avatar-left-container" class="white-content-box">
+		<div class="profile-pic-container">
+			<div><img src="{{avatar}}" /></div>
+		</div>
+		<div class="mobile-user-details">
+			<h1>{{#if user.profile.name}}{{user.profile.name}}{{else}}{{user.username}}{{/if}}</h1>
+			<span>{{followerCount}} followers &nbsp;&bull;&nbsp; {{followingCount}} following</span>
+		</div>
+		<input type="file" id="attachment" style="display:none;" />
+		<a href="" class="choose-avatar gray-gradient">Choose Avatar</a>
+			<span class="error">Error!</span>
+			<span class="progress">
+				<span style="width:0%" class="complete"></span>
+			</span>
+	</div>
+	{{getFollow}}
+	{{> account_following_tmpl}}
+	{{> account_follower_tmpl}}
+</div>
+</template>
+
+<template name="account_right_tmpl">
+	<div id="upper-right">
+		<h1>{{#if user.profile.name}}{{user.profile.name}}{{else}}{{user.username}}{{/if}}</h1>
+		<div class="upper-right-buttons">
+			{{#if donationsExist}}
+				<a href="#" id="billing-info-link" class="account-nav gray-gradient">Donated</a>
+			{{/if}}
+			<a href="#" id="account-info-link" class="account-nav selected gray-gradient">Settings</a>
+			<a href="#" id="activity-info-link" class="account-nav gray-gradient">Profile</a>
+		</div>
+	</div>
+</template>
+
+<template name="account_info_tmpl">
+	<div id="bible-versions">
+		<h2 class="top-h2">Bible Version</h2>
+		<a href="" data-version="jsonKingBooks" class="{{#if jsonKingBooks}}selected {{/if}}bible-version gray-gradient">King James (non-drama)</a>
+		<a href="" data-version="jsonBooks" class="{{#if jsonBooks}}selected {{/if}}bible-version gray-gradient">English Standard (drama)</a>
+	</div>
+	<h2 class="account-info-h2">Account Info</h2>
+	<div id="account-info-container" class="white-content-box">
+		<div class="input-left-container">
+			<input type="text" id="profile-name" class="input-small" placeholder="Name" value="{{profile.name}}" />
+			<div class="email-container">
+				<input type="text" id="profile-email" class="input-small" placeholder="Email" value="{{user.emails.[0].address}}" />
+				{{#if user.emails.[0].verified}}
+					<span class="verified">Email verified</span>
+				{{else}}
+					<span class="not-verified">Click to send verification email</span>
+				{{/if}}		
+			</div>
+			<input type="text" id="profile-username" class="input-small" placeholder="Username" value="{{user.username}}" />
+		</div>
+		<textarea id="profile-bio">{{#if profile.bio}}{{profile.bio}}{{else}}Enter a short bio{{/if}}</textarea>
+	</div>
+	
+	<h2 class="change-password">Change Password<strong class="error-message">Error</strong></h2>
+	<div id="change-password-container" class="white-content-box">
+		<input type="password" id="old-password" class="input-x-small password" placeholder="Old Password" />
+		<input type="password" id="new-password" class="input-x-small password" placeholder="New Password" />
+		<input type="password" id="retype-password" class="input-x-small password last" placeholder="Retype New Password" />
+	</div>
+		<div class="buttons">
+			<a href="" class="save-profile blue-gradient">Save</a>
+			<span class="saved">Saved!</span>
+		</div>
+</template>
+
+<template name="account_following_tmpl">
+{{#if publicPage}}
+	{{#if user}}
+		<div id="following-users">
+			<h4>Following</h4>
+			{{#if ready}}
+				{{#each user}}
+					<a href="/u/{{username}}" class="user-container minus white-content-box">
+						<img src="https://s3.amazonaws.com/versesavatars/{{avatar}}" />
+						<span class="right-user">
+							<strong>{{username}}</strong>
+							<span class="points"><b></b><i>{{total}}</i></span>
+						</span>
+					</a>
+				{{/each}}
+			{{/if}}
+			{{#if followingOver}}
+				<a href="#" class="user-container plus following">Show all {{followingShowAll}}</a>
+			{{/if}}
+		</div>
+	{{/if}}
+{{else}}
+	<div id="following-users">
+		<h4>Following<!-- : {{totalFollowing}} --></h4>
+		{{#if user}}
+			{{#if ready}}
+				{{#each user}}
+					<a href="/u/{{username}}" class="user-container minus white-content-box">
+						<img src="https://s3.amazonaws.com/versesavatars/{{avatar}}" />
+						<span class="right-user">
+							<strong>{{username}}</strong>
+							<span class="points"><b></b><i>{{total}}</i></span>
+						</span>
+					</a>
+				{{/each}}
+			{{/if}}
+			{{#if followingOver}}
+				<a href="#" class="user-container plus following">Show all {{followingShowAll}}</a>
+			{{/if}}
+		{{else}}
+		<a href="/search" class="search-friends">Find friends</a>
+		{{/if}}
+	</div>
+{{/if}}
+</template>
+
+<template name="account_follower_tmpl">
+{{#if user}}
+	<div id="follower-users">
+		<h4>Followers<!-- : {{totalFollowers}} --></h4>
+		{{#if ready}}
+			{{#each user}}
+			<a href="/u/{{username}}" class="user-container minus white-content-box">
+				<img src="https://s3.amazonaws.com/versesavatars/{{avatar}}" />
+				<span class="right-user">
+					<strong>{{username}}</strong>
+					<span class="points"><b></b><i>{{total}}</i></span>
+				</span>
+			</a>
+			{{/each}}
+		{{/if}}
+		{{#if followerOver}}
+			<a href="#" class="user-container plus followers">Show all {{followerShowAll}}</a>
+		{{/if}}
+	</div>
+{{/if}}
+</template>
+
+<template name="account_following_plus_tmpl">
+<ul>
+	{{#each user}}
+		<li><a href="/u/{{username}}" class="user-link white-content-box">
+			<span class="profile-image">
+				<img src="https://s3.amazonaws.com/versesavatars/{{avatar}}" />
+			</span>
+			<span class="profile-username">{{username}}</span>
+			<span class="points"><b></b><i>{{total}}</i></span>
+		</a></li>
+	{{/each}}
+</ul>
+</template>
+
+<template name="account_follower_plus_tmpl">
+<ul>
+	{{#each user}}
+		<li><a href="/u/{{username}}" class="user-link white-content-box">
+			<span class="profile-image">
+				<img src="https://s3.amazonaws.com/versesavatars/{{avatar}}" />
+			</span>
+			<span class="profile-username">{{username}}</span>
+			<span class="points"><b></b><i>{{total}}</i></span>
+		</a></li>
+	{{/each}}
+</ul>
+</template>
+
+<template name="activity_page_tmpl">
+	<div id="logged-in-container">
+		<div id="account-container" class="{{pageName}}">
+			{{> account_left_tmpl}}
+			<div id="right-container">
+				{{> account_right_tmpl}}
+				<div id="lower-right">
+					{{> activity_tmpl}}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="activity_tmpl">
+	
+	{{#if progressData}}
+		<h2>Progress</h2>
+		<div id="progress-percent" class="white-content-box">
+			<span class="chart" data-percent="{{progressPercent}}">
+				<span class="percent"><span class="counter" data-from="0" data-to="{{progressPercent}}">0</span>%</span>
+			</span>
+		</div>
+		<div id="progress" class="white-content-box">
+				{{chart}}
+				<div id="donut">
+					<canvas id="canvas" height="200" width="200"></canvas>
+				</div>
+			<div id="progress-legend">
+				{{#each progressData}}
+					{{#if bookCoinsEarned}}
+						<span class="{{bookNameTrim}}"><b style="background-color:{{backgroundColor}}"></b><strong>{{bookCoinsEarned}}<br /><i>{{bookName}}</i></strong></span>
+					{{/if}}
+				{{/each}}
+			</div>
+		</div>
+	{{/if}}
+	{{#if badges}}
+		<h2>Badges</h2>
+		<div id="badges" class="white-content-box">
+			{{#if bibleFinished}}
+				<div class="badge finished">
+					<span class="timestamp"><strong>New Testament</strong><br />{{finishedDate}}</span>
+				</div>
+			{{/if}}
+			{{#each badges}}
+				<div class="badge {{bookNameTrim}}">
+					<span class="timestamp"><strong>{{bookName}}</strong><br />{{completeDate}}</span>
+				</div>
+			{{/each}}
+		</div>
+	{{/if}}
+	<h2>Activity</h2>
+	<div id="activity">
+		{{#each activity}}
+			<div class="activity-outer">
+				{{#if activityFollowing}}
+					<div class="activity-left">
+						<div class="activity-icon followingUser">
+							<a href="/u/{{followingUser.username}}"><img src="https://s3.amazonaws.com/versesavatars/{{followingUser.profile.avatar}}" /></a>
+						</div>
+					</div>
+					<div class="activity-container white-content-box following">
+						<div class="text-float">
+							<div class="activity-text">
+								{{#if bothFollow}}
+									<em><strong>{{#if currentUser.profile.name}}{{currentUser.profile.name}}{{else}}{{currentUser.username}}{{/if}}</strong> and <a href="/u/{{followingUser.username}}">{{#if followingUser.name}}{{followingUser.name}}{{else}}{{followingUser.username}}{{/if}}</a> are now following eachother</em>
+								{{else}}
+									{{#if followedBy}}
+										<em><a href="/u/{{followingUser.username}}">{{#if followingUser.name}}{{followingUser.name}}{{else}}{{followingUser.username}}{{/if}}</a> is now following <strong>{{#if currentUser.profile.name}}{{currentUser.profile.name}}{{else}}{{currentUser.username}}{{/if}}</strong></em>
+									{{else}}
+										<em><strong>{{#if currentUser.profile.name}}{{currentUser.profile.name}}{{else}}{{currentUser.username}}{{/if}}</strong> is now following <a href="/u/{{followingUser.username}}">{{#if followingUser.name}}{{followingUser.name}}{{else}}{{followingUser.username}}{{/if}}</a></em>
+									{{/if}}
+								{{/if}}
+								<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+							</div>
+							<a href="#" class="like{{#if like}} liked{{/if}}{{#if likes}} likes{{/if}}" data-like="{{like}}"><span class="like-icon"></span><i>{{#if likes}}{{likes}}{{/if}}</i><b>{{likeNames}}</b></a>
+						</div>
+					</div>
+				{{/if}}
+				{{#if joined}}
+					<div class="activity-left">
+						<div class="activity-icon joinedAvatar"><img src="https://s3.amazonaws.com/versesavatars/{{currentUser.profile.avatar}}" /></div>
+					</div>
+					<div class="activity-container white-content-box joined">
+						<div class="text-float">
+							<div class="activity-text">
+								<em><strong>{{#if currentUser.profile.name}}{{currentUser.profile.name}}{{else}}{{currentUser.username}}{{/if}}</strong> joined verses </em>
+								<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+							</div>
+							<a href="#" class="like{{#if like}} liked{{/if}}{{#if likes}} likes{{/if}}" data-like="{{like}}"><span class="like-icon"></span><i>{{#if likes}}{{likes}}{{/if}}</i><b>{{likeNames}}</b></a>
+						</div>
+					</div>
+				{{/if}}
+				{{#if bookComplete}}
+					<div class="activity-left">
+						<div class="activity-badge {{bookNameTrim}}"></div>
+					</div>
+					<div class="activity-container white-content-box">
+						<div class="text-float">
+							<div class="activity-text">
+								<em><strong>{{#if currentUser.profile.name}}{{currentUser.profile.name}}{{else}}{{currentUser.username}}{{/if}}</strong> completed the book of <strong>{{bookComplete}}</strong></em>
+								<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+							</div>
+							<a href="#" class="like{{#if like}} liked{{/if}}{{#if likes}} likes{{/if}}" data-like="{{like}}"><span class="like-icon"></span><i>{{#if likes}}{{likes}}{{/if}}</i><b>{{likeNames}}</b></a>
+						</div>
+					</div>
+				{{/if}}
+				{{#if finished}}
+					<div class="activity-left">
+						<div class="activity-badge finished"></div>
+					</div>
+					<div class="activity-container white-content-box">
+						<div class="text-float">
+							<div class="activity-text">
+								<em><strong>{{#if currentUser.profile.name}}{{currentUser.profile.name}}{{else}}{{currentUser.username}}{{/if}}</strong> completed the <strong>New Testament</strong></em>
+								<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+							</div>
+							<a href="#" class="like{{#if like}} liked{{/if}}{{#if likes}} likes{{/if}}" data-like="{{like}}"><span class="like-icon"></span><i>{{#if likes}}{{likes}}{{/if}}</i><b>{{likeNames}}</b></a>
+						</div>
+					</div>
+				{{/if}}
+				{{#if point}}
+				<div class="activity-left">
+					<div class="activity-icon book {{bookNameTrim}}"></div>
+					<div class="coins-earned white-content-box"><span></span><b>+{{amount}}</b></div>
+				</div>
+					<div class="activity-container white-content-box point">
+						<div class="text-float">
+							<div class="activity-text">
+							<em>
+							<strong>{{#if currentUser.profile.name}}{{currentUser.profile.name}}{{else}}{{currentUser.username}}{{/if}}</strong> 
+							{{#if completedChapter}}
+								has completed <strong>{{completedChapter.length}}</strong> {{chapterGrammer}} in
+								<strong>{{bookName}}</strong>
+							
+							<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+							{{else}}
+								gained coins from the{{#if demo}} <strong>Tour</strong>{{else}} book of <strong>{{bookName}}</strong>{{/if}}
+							{{/if}}
+							</em>
+							{{#if completedChapter}}{{else}}
+								<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+							{{/if}}
+							</div>
+							<a href="#" class="like{{#if like}} liked{{/if}}{{#if likes}} likes{{/if}}" data-like="{{like}}"><span class="like-icon"></span><i>{{#if likes}}{{likes}}{{/if}}</i><b>{{likeNames}}</b></a>
+						</div>
+					</div>
+				{{/if}}
+				{{#if chestItem}}
+					<div class="activity-left">
+						<div class="activity-icon white-content-box special-item{{#if doubler}} doubler{{/if}}{{#if recycler}} recycler{{/if}}{{#if questionView}} questionView{{/if}}{{#if lifeUpgrade}} lifeUpgrade{{/if}}{{#if unlimitedAudio}} unlimitedAudio{{/if}}{{#if instantCoins}} instantCoins{{/if}}{{#if instantStars}} instantStars{{/if}}">
+							<div class="item"></div>
+						</div>
+					</div>
+					<div class="activity-container white-content-box chest-unlocked">
+						<div class="text-float">
+							<div class="activity-text">
+								<em><strong>{{#if currentUser.profile.name}}{{currentUser.profile.name}}{{else}}{{currentUser.username}}{{/if}}</strong>
+								{{#if doubler}} has received <strong>Coin doubler</strong>{{/if}}
+								{{#if recycler}} has received <strong>5 Question revives</strong>{{/if}}
+								{{#if questionView}} has researched <strong>Question view</strong>{{/if}}
+								{{#if lifeUpgrade}} has researched <strong>Life upgrade</strong>{{/if}}
+								{{#if unlimitedAudio}} has researched <strong>Unlimited audio coins</strong>{{/if}}
+								{{#if instantCoins}} has received <strong>{{instantCoins}} Instant coins</strong>{{/if}}
+								{{#if instantStars}} has received <strong>{{instantStars}} Instant stars</strong>{{/if}}
+								</em>
+								<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+							</div>
+							<a href="#" class="like{{#if like}} liked{{/if}}{{#if likes}} likes{{/if}}" data-like="{{like}}"><span class="like-icon"></span><i>{{#if likes}}{{likes}}{{/if}}</i><b>{{likeNames}}</b></a>
+						</div>
+					</div>
+				{{/if}}
+			</div>
+		{{/each}}
+	</div>
+</template>
+
+<template name="billing_page_tmpl">
+	<div id="logged-in-container">
+		<div id="account-container" class="billing-page">
+			{{> account_left_tmpl}}
+			<div id="right-container">
+				{{> account_right_tmpl}}
+				<div id="lower-right">
+					{{> billing_tmpl}}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="billing_tmpl">
+	
+	<div id="billing-card">
+		<div id="donated-container">
+			<h2 class="donated-h2">Donations<a href="/donate">Donate</a></h2>
+			<div id="total-donated" class="white-content-box">
+				{{#if totalDonated}}
+					<span>Total donated</span>
+					<strong>${{totalDonated}}</strong>
+				{{else}}
+					<div class="loading-container"><img src="/images/loader_white.gif" class="loading-gif" /></div>
+				{{/if}}
+			</div>
+		</div>
+		<div id="card-container">
+			{{#with creditCardInfo}}
+				<h2>Active card<a href="#" class="change-card">Change</a></h2>
+				<table class="card-info white-content-box">
+					<tr>
+						<td class="left">Card Type</td>
+						<td class="right">{{cardType}}</td>
+					</tr>
+					<tr>
+						<td class="left">Card Number</td>
+						<td class="right">**** **** **** {{cardNum}}</td>
+					</tr>
+					<tr>
+						<td class="left">Expiry</td>
+						<td class="right">{{cardExpMonth}}/{{cardExpYear}}</td>
+					</tr>
+				</table>
+			{{/with}}
+		</div>
+	</div>
+	<h2>Invoices</h2>
+	<div id="billing-invoices">
+		<ul>
+			<li class="list-head"><span class="amount-title">Amount</span><span class="created-title">Charge date</span><span class="card-type-title">Card type</span><span class="card-number-title">Card number</span><span class="card-exp-title">Card exp</span><span class="status-title">Status</span></li>
+			{{#if custCharges}}
+				{{#each custCharges}}
+					<li><a href="/i/{{id}}" class="invoice white-content-box"><span class="amount{{#if refunded}} refunded{{else}}{{#if paid}} paid{{else}} not-paid{{/if}}{{/if}}">${{amount}}</span><span class="created">{{created}}</span><span class="card-type">{{card.type}}</span><span class="card-number">**** **** **** {{card.last4}}</span><span class="card-exp">{{card.exp_month}}/{{card.exp_year}}</span><span class="status{{#if refunded}} refunded{{else}}{{#if paid}} paid{{else}} not-paid{{/if}}{{/if}}">{{#if refunded}}Refunded{{else}}{{#if paid}}Paid{{else}}Not paid{{/if}}{{/if}}</span></a></li>
+				{{/each}}
+			{{else}}
+				<li class="loading-list white-content-box"><img src="/images/loader_white.gif" class="loading-gif" /></li>
+			{{/if}}
+		</ul>
+	</div>
+</template>
+
+
+<template name="invoice_page_tmpl">
+	<div id="logged-in-container">
+		<div id="account-container" class="invoice-page">
+			{{> account_left_tmpl}}
+			<div id="right-container">
+				{{> account_right_tmpl}}
+				<div id="lower-right">
+					{{> invoice_tmpl}}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="invoice_tmpl">
+	<div id="invoice-container">
+		{{#if invoice}}
+			{{#if invalid}}
+				<h2 class="invoice-title">Invoice: <strong>Invalid ID</strong></h2>
+				<a href="#" class="close gray-gradient">Close</a>
+				<div class="invoice-content">
+					Not a valid invoice id or not the right account
+				</div>
+			{{else}}
+				{{#with invoice}}
+				<h2 class="invoice-title">Invoice: <strong>{{id}}</strong></h2>
+				<div class="invoice-actions">
+					<a href="#" class="print green-gradient">Print</a><!--<a href="#" class="close gray-gradient">Close</a>-->
+				</div>
+				<div class="invoice-content">
+					<div class="content-right">
+						<div id="company-logo"></div>
+						<div id="details">
+							<table class="card-info white-content-box">
+								<tr class="info-invoice-id">
+									<td class="left">Invoice ID:</td>
+									<td class="right">{{id}}</td>
+								</tr>
+								<tr>
+									<td class="left">Date:</td>
+									<td class="right">{{date}}</td>
+								</tr>
+								<tr>
+									<td class="left">Amount:</td>
+									<td class="right">${{amountDec}}</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="content-left">
+						<div id="company-info">
+							Verses Inc.<br />
+							Toronto, ON<br />
+							info@joinverses.com
+						</div>
+						<div id="user-info">
+							{{#if card.name}}
+								{{card.name}}
+							{{else}}
+								{{#if currentUser.profile.name}}
+									{{currentUser.profile.name}}<br />
+								{{else}}
+									{{currentUser.username}}<br />
+								{{/if}}
+							{{/if}}
+							<br />
+							{{currentUser.profile.email}}
+						</div>
+					</div>
+					<div class="content-bottom">
+						<table class="invoice-table">
+							<tr class="title">
+								<td>Item</td>
+								<td class="description">Description</td>
+								<td class="last">Amount ($)</td>
+							</tr>
+							<tr>
+								<td>Donation</td>
+								<td class="description">{{description}}</td>
+								<td class="last">{{amountDec}}</td>
+							</tr>
+							<tr>
+								<td colspan="3" class="total-contain">
+									<table class="total-table">
+										<tr>
+											<td></td>
+											<td class="right">
+												<table>
+													<tr>
+														<td>Subtotal:</td>
+														<td>{{amountDec}}</td>
+													</tr>
+													<tr class="no-pad">
+														<td>Amount paid:</td>
+														<td>{{#if paid}}{{amountDec}}{{else}}0.00{{/if}}</td>
+													</tr>
+													{{#if refunded}}
+													<tr class="no-pad">
+														<td>Amount refunded:</td>
+														<td>{{amountDec}}</td>
+													</tr>
+													{{/if}}
+													<tr class="due">
+														<td>Amount due:</td>
+														<td>{{#if paid}}0.00{{else}}{{amountDec}}{{/if}}</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div id="status" class="{{#if refunded}}refunded{{else}}{{#if paid}}paid{{else}}not-paid{{/if}}{{/if}}">{{#if refunded}}refunded{{else}}{{#if paid}}paid{{else}}not paid<span>{{failure_message}}</span>{{/if}}{{/if}}</div>
+				</div>
+				{{/with}}
+			{{/if}}
+		{{else}}
+			<h2 class="invoice-title">Invoice: <strong>Loading</strong></h2>
+			<div class="loading-invoice"><img src="/images/loader_white.gif" class="loading-gif" /></div>
+		{{/if}}
+	</div>
+</template>
+
+<template name="card_change_tmpl">
+	<p>Change credit card</p>
+	<form name="card-change-form" id="card-change-form">
+		<span class="payment-errors"></span>
+		<div class="form-row">
+		    <label>
+		      <span>Full Name</span>
+		      <input type="text" size="20" class="card-name" data-stripe="name" placeholder="Card Name"/>
+		    </label>
+	  	</div>
+		<div class="form-row">
+		    <label>
+		      <span>Card Number</span>
+		      <input type="text" size="20" class="card-number" data-stripe="number" placeholder="Card Number"/>
+		    </label>
+		    <input type="text" size="4" class="card-cvc" data-stripe="cvc" placeholder="CVC" />
+		  </div>
+
+		  <div class="form-row bottom">
+		    <label>
+		      <span>Expiration (MM/YYYY)</span>
+		      <input type="text" size="2" class="card-month" data-stripe="exp-month" placeholder="MM"/>
+		    </label>
+		    <span class="slash"> / </span>
+		    <input type="text" size="4" class="card-year" data-stripe="exp-year" placeholder="YYYY"/>
+		  </div>
+		<input type="submit" class="save-card blue-gradient" value="Save" />
+		<input type="hidden" id="form-complete" />
+		<div class="form-load"><img src="/images/loader.gif" width="25" /></div>
+	</form>
+</template>
+<template name="progress_percent_tmpl">
+	{{#if progressPercent}}
+		<div id="progress-percent" class="white-content-box">
+			<span class="chart" data-percent="{{progressPercent}}">
+				<span class="percent"><span class="counter" data-from="0" data-to="{{progressPercent}}">0</span>%</span>
+			</span>
+		</div>
+	{{else}}
+		<div id="progress-percent" class="white-content-box">
+			<span class="chart" data-percent="0">
+				<span class="percent"><span class="counter" data-from="0" data-to="0">0</span>%</span>
+			</span>
+		</div>
+	{{/if}}
+</template>
+
+<template name="public_profile_tmpl">
+	<div id="logged-in-container">
+		<div id="account-container" class="public-profile">
+			<div id="left-container">
+				<div id="avatar-left-container" class="white-content-box">
+					<div class="profile-pic-container">
+						<div><img src="https://s3.amazonaws.com/versesavatars/{{user.profile.avatar}}" /></div>
+					</div>
+					<div class="mobile-user-details">
+						<h1>{{#if user.profile.name}}{{user.profile.name}}{{else}}{{user.username}}{{/if}}</h1>
+						<strong><span></span><b>{{points}}</b></strong>
+						<span>{{followerCount}} followers &nbsp;&bull;&nbsp; {{followingCount}} following</span>
+					</div>
+					<a href="#" class="follow-user gray-gradient{{#if following}} green-gradient{{/if}}">Follow{{#if following}}ing{{/if}}</a>
+				</div>
+				{{getFollow}}
+				{{> account_following_tmpl}}
+				{{> account_follower_tmpl}}
+
+			</div>
+			<div id="right-container">
+				<div id="upper-right">
+					<h1>{{#if user.profile.name}}{{user.profile.name}}{{else}}{{user.username}}{{/if}}</h1>
+					<h2><span></span>{{points}}</h2>
+				</div>
+				<div id="lower-right">
+				
+				{{#if progressData}}
+					<h2>Progress</h2>
+					{{> progress_percent_tmpl}}
+					<div id="progress" class="white-content-box">
+							{{chart}}
+							<div id="donut">
+								<canvas id="canvas" height="200" width="200"></canvas>
+							</div>
+						<div id="progress-legend">
+							{{#each progressData}}
+								{{#if bookCoinsEarned}}
+									<span class="{{bookName}}"><b style="background-color:{{backgroundColor}}"></b><strong>{{bookCoinsEarned}}<br /><i>{{bookName}}</i></strong></span>
+								{{/if}}
+							{{/each}}
+						</div>
+					</div>
+				{{/if}}
+				{{#if badges}}
+					<h2>Badges</h2>
+					<div id="badges" class="white-content-box">
+						{{#if bibleFinished}}
+							<div class="badge finished">
+								<span class="timestamp"><strong>New Testament</strong><br />{{finishedDate}}</span>
+							</div>
+						{{/if}}
+						{{#each badges}}
+							<div class="badge {{bookNameTrim}}">
+								<span class="timestamp"><strong>{{bookName}}</strong><br />{{completeDate}}</span>
+							</div>
+						{{/each}}
+					</div>
+				{{/if}}
+					<h2>Activity</h2>
+					<div id="activity">
+						{{#each activity}}
+							<div class="activity-outer">
+									{{#if activityFollowing}}
+										<div class="activity-left">
+											<div class="activity-icon followingUser">
+												<a href="/u/{{followingUser.username}}"><img src="https://s3.amazonaws.com/versesavatars/{{followingUser.profile.avatar}}" /></a>
+											</div>
+										</div>
+										<div class="activity-container white-content-box following">
+											<div class="text-float">
+												<div class="activity-text">
+													{{#if bothFollow}}
+														<em><strong>{{#if user.profile.name}}{{user.profile.name}}{{else}}{{user.username}}{{/if}}</strong> and <a href="/u/{{followingUser.username}}">{{#if followingUser.name}}{{followingUser.name}}{{else}}{{followingUser.username}}{{/if}}</a> are now following eachother</em>
+													{{else}}
+														{{#if followedBy}}
+															<em><a href="/u/{{followingUser.username}}">{{#if followingUser.name}}{{followingUser.name}}{{else}}{{followingUser.username}}{{/if}}</a> is now following <strong>{{#if user.profile.name}}{{user.profile.name}}{{else}}{{user.username}}{{/if}}</strong></em>
+														{{else}}
+															<em><strong>{{#if user.profile.name}}{{user.profile.name}}{{else}}{{user.username}}{{/if}}</strong> is now following <a href="/u/{{followingUser.username}}">{{#if followingUser.name}}{{followingUser.name}}{{else}}{{followingUser.username}}{{/if}}</a></em>
+														{{/if}}
+													{{/if}}
+													<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+												</div>
+												<a href="#" class="like{{#if like}} liked{{/if}}{{#if likes}} likes{{/if}}" data-like="{{like}}"><span class="like-icon"></span><i>{{#if likes}}{{likes}}{{/if}}</i><b>{{likeNames}}</b></a>
+											</div>
+										</div>
+									{{/if}}
+									{{#if joined}}
+										<div class="activity-left">
+											<div class="activity-icon joinedAvatar"><img src="https://s3.amazonaws.com/versesavatars/{{user.profile.avatar}}" /></div>
+										</div>
+										<div class="activity-container white-content-box joined">
+											<div class="text-float">
+												<div class="activity-text">
+													<em><strong>{{#if user.profile.name}}{{user.profile.name}}{{else}}{{user.username}}{{/if}}</strong> joined verses </em>
+													<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+												</div>
+												<a href="#" class="like{{#if like}} liked{{/if}}{{#if likes}} likes{{/if}}" data-like="{{like}}"><span class="like-icon"></span><i>{{#if likes}}{{likes}}{{/if}}</i><b>{{likeNames}}</b></a>
+											</div>
+										</div>
+									{{/if}}
+									{{#if bookComplete}}
+										<div class="activity-left">
+											<div class="activity-badge {{bookNameTrim}}"></div>
+										</div>
+										<div class="activity-container white-content-box">
+											<div class="text-float">
+												<div class="activity-text">
+													<em><strong>{{#if user.profile.name}}{{user.profile.name}}{{else}}{{user.username}}{{/if}}</strong> completed the book of <strong>{{bookComplete}}</strong></em>
+													<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+												</div>
+												<a href="#" class="like{{#if like}} liked{{/if}}{{#if likes}} likes{{/if}}" data-like="{{like}}"><span class="like-icon"></span><i>{{#if likes}}{{likes}}{{/if}}</i><b>{{likeNames}}</b></a>
+											</div>
+										</div>
+									{{/if}}
+									{{#if finished}}
+										<div class="activity-left">
+											<div class="activity-badge finished"></div>
+										</div>
+										<div class="activity-container white-content-box">
+											<div class="text-float">
+												<div class="activity-text">
+													<em><strong>{{#if user.profile.name}}{{user.profile.name}}{{else}}{{user.username}}{{/if}}</strong> completed the <strong>New Testament</strong></em>
+													<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+												</div>
+												<a href="#" class="like{{#if like}} liked{{/if}}{{#if likes}} likes{{/if}}" data-like="{{like}}"><span class="like-icon"></span><i>{{#if likes}}{{likes}}{{/if}}</i><b>{{likeNames}}</b></a>
+											</div>
+										</div>
+									{{/if}}
+									{{#if point}}
+									<div class="activity-left">
+										<div class="activity-icon book {{bookNameTrim}}"></div>
+										<div class="coins-earned white-content-box"><span></span><b>+{{amount}}</b></div>
+									</div>
+										<div class="activity-container white-content-box point">
+											<div class="text-float">
+												<div class="activity-text"><em><strong>{{#if user.profile.name}}{{user.profile.name}}{{else}}{{user.username}}{{/if}}</strong> 
+												{{#if completedChapter}}
+													has completed <strong>{{completedChapter.length}}</strong> {{chapterGrammer}} in
+													<strong>{{bookName}}</strong>
+												<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+												{{else}}
+													
+													gained coins from the{{#if demo}} <strong>Tour</strong>{{else}} book of <strong>{{bookName}}</strong>{{/if}} 
+												{{/if}}
+												{{#if completedChapter}}{{else}}
+													<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+												{{/if}}
+												</em>
+												</div>
+												<a href="#" class="like{{#if like}} liked{{/if}}{{#if likes}} likes{{/if}}" data-like="{{like}}"><span class="like-icon"></span><i>{{#if likes}}{{likes}}{{/if}}</i><b>{{likeNames}}</b></a>
+											</div>
+										</div>
+									{{/if}}
+									{{#if chestItem}}
+										<div class="activity-left">
+											<div class="activity-icon white-content-box special-item{{#if doubler}} doubler{{/if}}{{#if recycler}} recycler{{/if}}{{#if questionView}} questionView{{/if}}{{#if lifeUpgrade}} lifeUpgrade{{/if}}{{#if unlimitedAudio}} unlimitedAudio{{/if}}{{#if instantCoins}} instantCoins{{/if}}{{#if instantStars}} instantStars{{/if}}">
+												<div class="item"></div>
+											</div>
+										</div>
+										<div class="activity-container white-content-box chest-unlocked">
+											<div class="text-float">
+												<div class="activity-text">
+													<em><strong>{{#if user.profile.name}}{{user.profile.name}}{{else}}{{user.username}}{{/if}}</strong>
+													{{#if doubler}} has received <strong>Coin doubler</strong>{{/if}}
+													{{#if recycler}} has received <strong>5 Question revive</strong>{{/if}}
+													{{#if questionView}} has researched <strong>Question view</strong>{{/if}}
+													{{#if lifeUpgrade}} has researched <strong>Life upgrade</strong>{{/if}}
+													{{#if unlimitedAudio}} has researched <strong>Unlimited audio coins</strong>{{/if}}
+													{{#if instantCoins}} has received <strong>{{instantCoins}} Instant coins</strong>{{/if}}
+													{{#if instantStars}} has received <strong>{{instantStars}} Instant stars</strong>{{/if}}
+													</em>
+													<span class="timestamp-container"><span class="timestamp">{{date}}</span></span>
+												</div>
+												<a href="#" class="like{{#if like}} liked{{/if}}{{#if likes}} likes{{/if}}" data-like="{{like}}"><span class="like-icon"></span><i>{{#if likes}}{{likes}}{{/if}}</i><b>{{likeNames}}</b></a>
+											</div>
+										</div>
+									{{/if}}
+							</div>
+						{{/each}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+
+
+<template name="book_details_tmpl">
+	<h4>{{name}}</h4>
+	<h5>{{chapters}} chapters total</h5>
+	<div class="book-details">
+		<div class="detail-content"><div class="complete"><strong>{{complete}}</strong><span></span></div><div class="comlete-text">Chapter audio complete</div></div>
+		<div class="detail-content"><div class="totalComplete"><strong>{{totalComplete}}</strong><span></span></div><div class="comlete-text">Chapter questions complete</div></div>
+	</div>
+	<div class="total-coin">
+		<span></span><strong>{{bookCoinsEarned}}</strong> <em>Coins earned</em>
+	</div>
+</template>
+
+<template name="chapters_page_tmpl">
+	{{> outer_tmpl}}
+	 	<div id="site-container">
+			{{> chapters_tmpl}}
+		</div>
+	{{> footer_tmpl}}
+</template>
+<template name="chapters_tmpl">
+		<div id="logged-in-container">
+			<div id="top-container" class="books-banner">
+				<div class="banner-container">
+					<h1>Choose a book</h1>
+					<h2>Suggested book:</h2>
+					<span class="book-left {{suggestedBook}} started">
+						<a href="/books/{{suggestedBookLink}}" class="book-icon"></a>
+					</span>
+				</div>
+			</div>
+			<div id="content-container">
+				<div id="books-container">
+
+					{{#each books}}
+						{{#if unlocked}}
+							<a href="#" id="book-{{bookNum}}-box" data-book-id="{{_id}}" class="book-box book-box-general white-content-box{{#if complete}} complete{{/if}}{{#if totalComplete}} total-complete{{/if}}">
+								<span class="book-padded"> 
+									<span class="book-left {{bookNameTrim}}{{#if progressTotalPercent}} started{{/if}}">
+										<strong class="book-icon"></strong>
+										<span class="progress">
+											<span style="width:{{progressPercent}}%" class="complete"></span>
+											<span style="width:{{progressTotalPercent}}%; background-color:{{backgroundColor}}" class="totalComplete"></span>
+										</span>
+									</span>
+									<span class="book-right">
+										<h3>{{bookName}}</h3>
+										<h4>{{chapters}} {{chapterGrammer}}</h4>
+										<span class="coins-container"><b></b>{{bookCoinsEarned}}</span>
+										<span class="stars-container"><b></b>{{chaptersTotalComplete}}</span>
+									</span>
+								</span>
+								<span class="book-lock{{#if spent}} spent{{/if}}" style="{{#if totalComplete}}{{#if spent}} {{else}}background-color:{{backgroundColor}}{{/if}}{{/if}}">
+									<b></b>
+								</span>
+							</a>
+						{{else}}
+							<a href="#" id="book-{{bookNum}}-box" data-book-id="{{_id}}" class="locked-book book-box-general">
+								<span class="locked-content">
+									<span class="locked-content-cell">
+										<b></b>
+										<span class="locked-inner-content">
+											Unlock the book of {{bookName}} with <strong>{{prevChapters}} stars</strong><br />
+											or by completing <strong>{{prevBookname}}</strong>
+										</span>
+									</span>
+								</span>
+							</a>
+						{{/if}}
+					{{/each}}
+					
+					
+				</div>
+			</div>
+		</div>
+</template>
+
+<template name="tour_tmpl">
+	<h1>Welcome to verses</h1>
+	<p>Let’s begin by choosing the book of Matthew</p>
+	<a href="#" id="book-0-box" class="book-box book-box-general white-content-box">
+		<span class="book-padded"> 
+			<span class="book-left">
+				<strong class="book-icon"></strong>
+				<span class="progress">
+					<span style="width:0%" class="complete"></span>
+					<span style="width:0%; background-color:#e2574c" class="totalComplete"></span>
+				</span>
+			</span>
+			<span class="book-right">
+				<h3>Matthew</h3>
+				<h4>28 chapters</h4>
+				<span class="coins-container"><b></b>0</span>
+				<span class="stars-container"><b></b>0</span>
+			</span>
+		</span>
+		<span class="book-lock">
+			<b></b>
+		</span>
+	</a>
+	<div class="lower-tour">
+		<a href="#" class="skip-tour gray-gradient">Skip tour</a>
+		<div class="tour-location">
+			<strong class="first active"></strong>
+			<strong class="second"></strong>
+			<strong class="third"></strong>
+		</div>
+	</div>
+</template>
+
+<template name="tour_step2_tmpl">
+	<h1>Good job!</h1>
+	<p>Each chapter has its own audio and questions.</p>
+	<p>The audio and questions are where you will be receiving most of your coins.</p>
+	<p>Click the play button to listen to a short snippet from Matthew, Verse 4.</p>
+	
+	<div id="coins-remaining">
+		<div class="audio-coin{{#if underMaxCoins}} underMaxCoins{{/if}}">
+			{{#if underMaxCoins}}<em></em><b></b>{{else}}<span></span>{{/if}}
+		</div>
+		<i>{{#if underMaxCoins}}<strong>{{coinsAccumulated}}</strong> Audio Coins Earned{{else}}{{coinsAccumulated}} Maximum audio coins earned{{/if}}</i>
+		<div id="audio-coins"></div>
+		<div id="oneCall" style="display:none;">0</div>
+	</div>
+
+	<div id="constant-audio">
+		{{> audio_tmpl}}
+	</div>
+	<div class="lower-tour step2">
+		<a href="#" class="continue blue-gradient">Continue</a>
+		<a href="#" class="skip-tour gray-gradient">Skip tour</a>
+		<div class="tour-location">
+			<strong class="first active"></strong>
+			<strong class="second active"></strong>
+			<strong class="third"></strong>
+		</div>
+	</div>
+</template>
+
+<template name="tour_step3_tmpl">
+	<h1>Great work!</h1>
+	<p>Once you complete the audio you’ll be able to access the questions section.</p>
+	<p>Select the correct answer. The more tries it takes the less coins you receive</p>
+	{{#with questionData}}
+	<div id="{{_id}}" class="question-container complete-{{complete}} wrong-{{allIncorrect}}">
+		<div class="question-container-left">
+			<div class="points-remaining">
+				<span>{{pointsRemaining}}</span>
+			</div>
+			<div class="lives-remaining special-{{specialLives}}" data-lives="{{lives}}">
+				{{#each heart}}
+					<div class="heart-container"><div class="heart heart{{this}}"></div></div>
+				{{/each}}
+			</div>
+		</div>
+		<div class="question-container-right">
+			<div class="container-padded">
+				{{#if allIncorrect}}
+					<div class="incorrect-answer">
+						<h4>Incorrect answer: would you like to recycle the question for 100 coins?</h4>
+						<div class="recycle-container">
+							<a href="#" class="gray-gradient recycle-answer{{#if recycler}} special{{/if}}">Recycle question  (&nbsp;<strong></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-100 coins)</a>
+							{{#if recycler}}
+							<a href="#" class="gray-gradient special-recycler"><span>Use a reclycler</span></a>
+							{{/if}}
+						</div>
+						<div class="error">You don't have enough points to recycle</div>
+					</div>
+				{{else}}
+					<h4>{{questionTitle}}</h4>
+					<div class="answers-container" data-question="{{question}}" data-answer="{{answer}}">
+						{{#each answers}}
+							<a href="#" class="answer gray-gradient answer{{this.key}}" data-answer="{{this.key}}">{{value}}</a>
+						{{/each}}
+					</div>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+	{{/with}}
+	<div class="lower-tour step3">
+		<a href="#" class="complete-tour blue-gradient">Complete tour</a>
+		<a href="#" class="skip-tour gray-gradient">Skip tour</a>
+		<div class="tour-location">
+			<strong class="first active"></strong>
+			<strong class="second active"></strong>
+			<strong class="third active"></strong>
+		</div>
+	</div>
+</template>
+
+<template name="tour_step4_tmpl">
+	<h1>Unlock rewards</h1>
+	<p>Complete entire books to receive helpful rewards</p>
+	<div class="rewards">
+		<span class="doubler"></span><span class="questionView"></span><span class="recycler"></span>
+	</div>
+	<a href="#" class="close-tour blue-gradient">Close</a>
+</template>
+
+<template name="chest_error_overlay_tmpl">
+	<h1>Seems to be stuck</h1>
+</template>
+
+<template name="chest_overlay_tmpl">
+	<h1>{{bookName}} complete!</h1>
+	<h2 class="subtitle">Choose a reward</h2>
+	<div class="choices-container-mobile">
+		<div class="choices-right"><a href="#" class="prev"></a></div>
+		<div class="choices-middle">
+			<div class="all-choices-mobile">
+				<ul>
+					<li class="choice first-choice" data-slide-num="0"></li>
+					<li class="choice second-choice" data-slide-num="1"></li>
+					<li class="choice third-choice" data-slide-num="2"></li>
+				</ul>
+			</div>
+		</div>
+		<div class="choices-right"><a href="#" class="next"></a></div>
+	</div>
+	<a href="#" class="next-book blue-gradient">Next book</a>
+</template>
+
+<template name="first_chest_tmpl">
+	{{#if chestTmpl1}}{{> chest_choice_1_tmpl}}{{/if}}
+	{{#if chestTmpl2}}{{> chest_choice_2_tmpl}}{{/if}}
+	{{#if chestTmpl3}}{{> chest_choice_3_tmpl}}{{/if}}
+	{{#if chestTmpl4}}{{> chest_choice_4_tmpl}}{{/if}}
+	{{#if chestTmpl5}}{{> chest_choice_5_tmpl}}{{/if}}
+	{{#if chestTmpl6}}{{> chest_choice_6_tmpl}}{{/if}}
+	{{#if chestTmpl7}}{{> chest_choice_7_tmpl}}{{/if}}
+	{{#if chestTmpl8}}{{> chest_choice_8_tmpl}}{{/if}}
+	{{#if chestTmpl9}}{{> chest_choice_9_tmpl}}{{/if}}
+	{{#if chestTmpl10}}{{> chest_choice_10_tmpl}}{{/if}}
+	{{#if chestTmpl11}}{{> chest_choice_11_tmpl}}{{/if}}
+</template>
+
+<template name="second_chest_tmpl">
+	{{#if chestTmpl1}}{{> chest_choice_1_tmpl}}{{/if}}
+	{{#if chestTmpl2}}{{> chest_choice_2_tmpl}}{{/if}}
+	{{#if chestTmpl3}}{{> chest_choice_3_tmpl}}{{/if}}
+	{{#if chestTmpl4}}{{> chest_choice_4_tmpl}}{{/if}}
+	{{#if chestTmpl5}}{{> chest_choice_5_tmpl}}{{/if}}
+	{{#if chestTmpl6}}{{> chest_choice_6_tmpl}}{{/if}}
+	{{#if chestTmpl7}}{{> chest_choice_7_tmpl}}{{/if}}
+	{{#if chestTmpl8}}{{> chest_choice_8_tmpl}}{{/if}}
+	{{#if chestTmpl9}}{{> chest_choice_9_tmpl}}{{/if}}
+	{{#if chestTmpl10}}{{> chest_choice_10_tmpl}}{{/if}}
+	{{#if chestTmpl11}}{{> chest_choice_11_tmpl}}{{/if}}
+</template>
+
+<template name="third_chest_tmpl">
+	{{#if chestTmpl1}}{{> chest_choice_1_tmpl}}{{/if}}
+	{{#if chestTmpl2}}{{> chest_choice_2_tmpl}}{{/if}}
+	{{#if chestTmpl3}}{{> chest_choice_3_tmpl}}{{/if}}
+	{{#if chestTmpl4}}{{> chest_choice_4_tmpl}}{{/if}}
+	{{#if chestTmpl5}}{{> chest_choice_5_tmpl}}{{/if}}
+	{{#if chestTmpl6}}{{> chest_choice_6_tmpl}}{{/if}}
+	{{#if chestTmpl7}}{{> chest_choice_7_tmpl}}{{/if}}
+	{{#if chestTmpl8}}{{> chest_choice_8_tmpl}}{{/if}}
+	{{#if chestTmpl9}}{{> chest_choice_9_tmpl}}{{/if}}
+	{{#if chestTmpl10}}{{> chest_choice_10_tmpl}}{{/if}}
+	{{#if chestTmpl11}}{{> chest_choice_11_tmpl}}{{/if}}
+</template>
+
+<template name="chest_choice_1_tmpl">
+	<span class="choice-wrap white-content-box">
+		<span class="choice-content">
+			<h2>Doubler</h2>
+			<p>Double your coins for the next 20 questions answered correctly</p>
+			<span class="chest-item doubler"></span>
+		</span>
+		<a href="#" class="choose-item gray-gradient" data-item-num="1">Get it</a>
+	</span>
+</template>
+
+<template name="chest_choice_2_tmpl">
+	<span class="choice-wrap white-content-box">
+		<span class="choice-content">
+			<h2>Coins</h2>
+			<p>Instantly receive 500 coins</p>
+			<span class="chest-item instant-coins-500"></span>
+		</span>
+		<a href="#" class="choose-item gray-gradient" data-item-num="2">Get it</a>
+	</span>
+</template>
+
+<template name="chest_choice_3_tmpl">
+	<span class="choice-wrap white-content-box">
+		<span class="choice-content">
+			<h2>Coins</h2>
+			<p>Instantly receive 1000 coins</p>
+			<span class="chest-item instant-coins-1000"></span>
+		</span>
+		<a href="#" class="choose-item gray-gradient" data-item-num="3">Get it</a>
+	</span>
+</template>
+
+<template name="chest_choice_4_tmpl">
+	<span class="choice-wrap white-content-box">
+		<span class="choice-content">
+			<h2>Question revive x5</h2>
+			<p>Use the question revive when you run out of hearts</p>
+			<span class="chest-item recycler"></span>
+		</span>
+		<a href="#" class="choose-item gray-gradient" data-item-num="4">Get it</a>
+	</span>
+</template>
+
+<template name="chest_choice_5_tmpl">
+	<span class="choice-wrap white-content-box">
+		<span class="choice-content">
+			<h2>1 Star</h2>
+			<p>Instantly receive 1 free star</p>
+			<span class="chest-item one-star"></span>
+		</span>
+		<a href="#" class="choose-item gray-gradient" data-item-num="5">Get it</a>
+	</span>
+</template>
+
+<template name="chest_choice_6_tmpl">
+	<span class="choice-wrap white-content-box">
+		<span class="choice-content">
+			<h2>3 Stars</h2>
+			<p>Instantly receive 3 free stars</p>
+			<span class="chest-item three-stars"></span>
+		</span>
+		<a href="#" class="choose-item gray-gradient" data-item-num="6">Get it</a>
+	</span>
+</template>
+
+
+<template name="chest_choice_7_tmpl">
+	<span class="choice-wrap white-content-box">
+		<span class="choice-content">
+			<h2>5 Stars</h2>
+			<p>Instantly receive 5 free stars</p>
+			<span class="chest-item five-stars"></span>
+		</span>
+		<a href="#" class="choose-item gray-gradient" data-item-num="7">Get it</a>
+	</span>
+</template>
+
+<!-- <template name="chest_choice_5_tmpl">
+	<span class="choice-wrap white-content-box">
+		<span class="choice-content">
+			<h2>Research</h2>
+			<p>Unlock a helpful ability, +1 to question lives</p>
+			<span class="chest-item research-lives"></span>
+		</span>
+		<a href="#" class="choose-item gray-gradient" data-item-num="5">Get it</a>
+	</span>
+</template>
+
+<template name="chest_choice_6_tmpl">
+	<span class="choice-wrap white-content-box">
+		<span class="choice-content">
+			<h2>Research</h2>
+			<p>Unlock a helpful ability, unlimited audio coins</p>
+			<span class="chest-item unlimited-audio"></span>
+		</span>
+		<a href="#" class="choose-item gray-gradient" data-item-num="6">Get it</a>
+	</span>
+</template>
+
+
+<template name="chest_choice_7_tmpl">
+	<span class="choice-wrap white-content-box">
+		<span class="choice-content">
+			<h2>Research</h2>
+			<p>Unlock a helpful ability, questions can be viewed at any time</p>
+			<span class="chest-item research"></span>
+		</span>
+		<a href="#" class="choose-item gray-gradient" data-item-num="7">Get it</a>
+	</span>
+</template> -->
+
+<template name="streak_tmpl">
+	{{#if streak}}
+		<div class="streak-container">
+			<div class="streak-title">
+				<b></b><span>Daily streak payout</span>
+			</div>
+			<div class="streak-reward">
+				<b></b><span>+{{streak}}</span>
+			</div>
+		</div>
+	{{/if}}
+</template>
+
+<template name="star_overlay_tmpl">
+	<div id="top-star-banner">
+		<div id="star-banner-cover">
+			<div class="star-win"></div>
+		</div>
+	</div>
+	<div class="star-content">
+		{{> streak_tmpl}}
+		<h2>Congratulations!</h2>
+		<h3>You've received 1 star in the book of {{bookName}}</h3>
+		<a href="#" class="next-chapter blue-gradient">{{isEnd}}</a>
+	</div>
+</template>
+
+<template name="book_complete_overlay_tmpl">
+	<div id="top-complete-banner">
+		<div id="complete-banner-cover">
+			<div class="complete-win {{bookNameRep}}"></div>
+		</div>
+	</div>
+	<div class="complete-content">
+		{{> streak_tmpl}}
+		<h2>Congratulations!</h2>
+		<h3>You've completed the book of {{bookName}}</h3>
+		<a href="#" class="choose-reward green-gradient">Choose a reward</a>
+	</div>
+</template>
+
+<template name="finished_overlay_tmpl">
+	<div id="top-finished-banner">
+		<div id="finished-banner-cover">
+			<div class="finished-win"></div>
+		</div>
+	</div>
+	<div class="finished-content">
+		{{> streak_tmpl}}
+		<h2>Congratulations!</h2>
+		<h3>You’ve completed the<br />New Testament</h3>
+		<a href="#" class="choose-reward green-gradient">Choose a reward</a>
+	</div>
+</template>
+
+<template name="book_unlock_overlay_tmpl">
+	<div class="unlock-overlay-content">
+		<div class="book-icon-container {{bookNameTrim}}">
+			<strong class="book-icon"></strong>
+			<b class="star">{{stars}}</b>
+		</div>
+		<h2>Unlock {{bookName}}?</h2>
+		<h3>Unlock the book of {{bookName}}<br />with {{stars}} {{starsGrammar}}?</h3>
+		{{#if starsAvailable}}
+			<a href="#" class="unlock-book blue-gradient">Unlock</a>
+		{{else}}
+			<a href="#" class="unlock-book-not-enough">Not enough stars</a>
+		{{/if}}
+	</div>
+</template>
+
+
+
+<template name="book_tmpl">
+	{{#if unlocked}}
+		<div id="logged-in-container" class="book-screen {{bookNameTrimmed}}">
+			<div id="top-container" style="background-color:{{backgroundColor}}">
+				<span>The book of</span><h1>{{bookName}}</h1>
+			</div>
+			<div id="lower-top-container">
+				{{> chest_items_tmpl}}
+				<div class="special-items-title">Special items</div>
+			</div>
+			<div id="content-container">
+				<div id="chapters-right">{{> single_chapter_tmpl}}</div>
+				<div id="chapters-left-nav">
+					<div class="title">Chapters</div>
+					{{#if chaptersLoading}}
+						<div class="loader"><img src="/images/loader.gif" width="25" /></div>
+					{{else}}
+						{{#each chapterCount}}
+						<a href="#" id="{{_id}}" class="chapter-link gray-gradient{{#if selected}} selected{{/if}}{{#if complete}} complete{{/if}}{{#if totalComplete}} total-complete{{/if}}" style="{{#if selected}}background-color:{{backgroundColor}};{{/if}}">
+							{{#if complete}}
+								{{#if totalComplete}}
+								<span class="total-complete-badge"></span>
+								{{else}}
+								<span class="complete-badge"></span>
+								{{/if}}
+							{{else}}
+								{{#if totalComplete}}
+									<span class="total-complete-badge"></span>
+								{{/if}}
+							{{/if}}
+						<strong>{{chapter}}</strong></a>
+						{{/each}}
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	{{else}}
+	<div id="logged-in-container">
+		<div class="not-unlocked">
+			<strong></strong>
+			<span>You haven't unlocked {{bookName}} yet!</span>
+			<a href="/" class="go-back blue-gradient">Go back</a>
+		</div>
+	</div>
+	{{/if}}
+</template>
+
+<template name="single_chapter_tmpl">
+	{{#if chaptersLoading}}
+		<div class="loader"><img src="/images/loader.gif" width="25" /></div>
+	{{else}}
+	{{#with chapterPull}}
+		<div id="chapter-content-right">
+			<div id="chapter-title" class="title{{#if complete}} complete{{/if}}{{#if totalComplete}} total-complete{{/if}}" style="background-color:{{backgroundColor}}">
+				<span>Chapter</span>
+				<strong>{{chapter}}</strong>
+			</div>
+			<div id="chapter-title-right">
+
+				<div class="chapter-badges-container">
+					<div id="complete-badge"  class="badge{{#if complete}} complete{{/if}}">{{#if complete}}Audio complete{{else}}Audio not complete{{/if}}</div>
+					<div id="total-complete-badge" class="badge{{#if totalComplete}} total-complete{{/if}}">{{#if totalComplete}}Questions complete{{else}}Questions not complete{{/if}}</div>
+				</div>
+				<div id="chapter-info-left">
+					<span class="title">{{bookName}} - Chapter {{chapter}} - {{verses}} verses</span>
+					<div id="coins-remaining">
+						<div class="audio-coin{{#if underMaxCoins}} underMaxCoins{{/if}}">
+							{{#if underMaxCoins}}<em></em><b></b>{{else}}<span></span>{{/if}}
+						</div>
+						<i>{{#if underMaxCoins}}<strong>{{coinsAccumulated}}</strong> Audio Coins Earned{{else}}{{coinsAccumulated}} Maximum audio coins earned{{/if}}</i>
+						<div id="audio-coins"></div>
+						<div id="oneCall" style="display:none;">0</div>
+					</div>
+				</div>
+				<div id="constant-audio">
+					{{> audio_tmpl}}
+				</div>
+			</div>
+		</div>
+	{{/with}}
+	{{> questions_verses_btns}}
+	<div id="questions-verses-container"></div>
+	{{/if}}
+</template>
+<template name="audio_tmpl">
+<div id="audio-container" data-audio-file="{{audioFile}}" class="white-content-box">
+	<div id="audio"></div>
+	<div id="jp_container_1">
+		<a href="#" class="jp-play"></a>
+		<a href="#" class="jp-pause"></a>
+		<div class="jp-progress">
+          <div class="jp-seek-bar">
+            <div class="jp-play-bar"></div>
+          </div>
+        </div>
+        <div class="jp-current-time">0:00</div>
+        <div class="jp-duration" style="display:none;"></div>
+	</div>
+</div>
+</template>
+
+<template name="questions_verses_btns">
+	<div id="tab-btns">
+		<a href="#" class="chapter-questions-btn gray-gradient question-verse{{#if questionSelected}} selected{{/if}}">{{#if audioComplete}}<span class="questions-remain{{#if questionSelected}} hide{{/if}}{{#if questionsComplete}} complete{{/if}}">{{numQuestionsRemain}}</span>{{/if}}<i>Questions</i></a>
+		<a href="#" class="chapter-verses-btn gray-gradient question-verse {{#if verseSelected}} selected{{/if}}">Verses</a>
+	</div>
+</template>
+
+<template name="chest_items_tmpl">
+		<div id="chest-items">
+			{{#if item}}
+				{{#each item}}
+					{{#if this.doubler}}<span class="doubler">{{this.doubler}} doublers remaining</span>{{/if}}
+					{{#if this.recycler}}<span class="recycler">{{this.recycler}} recyclers remaining</span>{{/if}}
+					{{#if this.questionView}}<span class="questionView">Question view researched</span>{{/if}}
+					{{#if this.lifeUpgrade}}<span class="lifeUpgrade">Life upgrade researched</span>{{/if}}
+					{{#if this.unlimitedAudio}}<span class="unlimitedAudio">Unlimited audio coins researched</span>{{/if}}
+				{{/each}}
+			{{else}}
+				<span class="none">No special items</span>
+			{{/if}}
+		</div>
+</template>
+
+<template name="verses_tmpl">
+	<div id="verse-text">
+		<div id="verse-text-inner">
+			{{#if verseTextLoaded}}
+			<p>
+				{{#each verseText}}
+					<strong>{{verse_id}}</strong>{{verse_text}}
+				{{/each}}
+			</p>
+			{{else}}
+				<div class="loading"><img src="/images/loader.gif" width="25" /></div>
+			{{/if}}
+		</div>
+	</div>
+</template>
+
+<template name="questions_tmpl">
+<div id="questions">
+	{{#if audioComplete}}
+	{{#each questionData}}
+	<div id="{{_id}}" class="question-container complete-{{complete}} wrong-{{allIncorrect}}">
+		<div class="question-container-left">
+			<div class="points-remaining">
+				<span>{{pointsRemaining}}</span>
+			</div>
+			<div class="lives-remaining special-{{specialLives}}" data-lives="{{lives}}">
+				{{#each heart}}
+					<div class="heart-container"><div class="heart heart{{this}}"></div></div>
+				{{/each}}
+			</div>
+		</div>
+		<div class="question-container-right">
+			<div class="container-padded">
+				{{#if allIncorrect}}
+					<div class="incorrect-answer">
+						<h4>Incorrect answer: would you like to recycle the question for 100 coins?</h4>
+						<div class="recycle-container">
+							<a href="#" class="gray-gradient recycle-answer{{#if recycler}} special{{/if}}">Recycle question  (&nbsp;<strong></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-100 coins)</a>
+							{{#if recycler}}
+							<a href="#" class="gray-gradient special-recycler"><span>Use a reclycler</span></a>
+							{{/if}}
+						</div>
+						<div class="error">You don't have enough points to recycle</div>
+					</div>
+				{{else}}
+				<!-- Used to be a constant here, not sure why -->
+					<h4>{{questionTitle}}</h4>
+					<div class="answers-container" data-question="{{question}}" data-answer="{{answer}}">
+						{{#each answers}}
+							<a href="#" class="answer gray-gradient answer{{this.key}}" data-answer="{{this.key}}">{{value}}</a>
+							<!-- <a href="#" class="answer gray-gradient answer{{key}}" data-answer="{{key}}">{{value}}</a> -->
+						{{/each}}
+					</div>
+				{{/if}}
+			</div>
+			{{#if complete}}
+				{{#if didYouKnow}}
+					<div class="did-you-know-container">
+						<div class="did-table">
+							<div class="did-cell"><span></span></div>
+							<div class="did-cell"><strong>Did you know</strong><br /><p>{{didYouKnow}}</p></div>
+						</div>
+					</div>
+				{{/if}}
+			{{/if}}
+		</div>
+	</div>
+	{{/each}}
+	{{else}}
+		{{#with chapter}}
+			<div id="audio-not-complete">
+				<div class="not-complete-container">
+					<div class="not-complete-icon{{#if complete}} complete{{/if}}"></div>
+					<div class="count-icon{{#if coinComplete}} complete{{/if}}"><span>{{coinsAccumulated}}</span></div>
+				</div>
+				<span>You must complete the audio<br />with a minimum of <strong>{{verses}}</strong> audio coins to unlock the questions</span>
+			</div>
+		{{/with}}
+	{{/if}}
+</div>
+</template>
+
+<template name="admin_tmpl">
+		<div id="logged-in-container">
+			<div id="top-container" class="admin-head">
+				<h1><a href="/admin">Admin</a></h1>
+				<a href="#" class="export-signup-emails gray-gradient"><span></span>View {{emailCount}} signup emails</a>
+				<a href="#" class="export-user-emails gray-gradient"><span></span>View {{userCount}} user emails</a>
+			</div>
+			<div id="content-container" class="admin-container"></div>
+		</div>
+</template>
+
+<template name="admin_content_tmpl">
+	<div id="admin-top-container">
+		<div id="top-left">
+			<div class="left-notes white-content-box"><strong>{{userCount}}</strong><em>Total Users</em></div>
+			<div class="left-notes bottom-note white-content-box"><strong>{{dayProgress}}</strong><em>Usage Today</em></div>
+		</div>
+		<div class="bar-graph-container">
+			<b>Daily usage for {{monthName}}</b>
+			<div id="bar-graph"></div>
+		</div>
+	</div>
+	<ul>
+		<li class="list-head white-content-box"><span class="head-profile-image title">Img</span><span class="head-profile-name title">Name</span><span class="head-profile-username title">Username</span><span class="head-profile-email title">Email</span><span class="head-profile-created title">Created</span><span class="head-profile-progress title">Progress</span></li>
+		{{#each user}}
+			<li><a href="/u/{{username}}" class="user-link white-content-box"><span class="profile-image"><img src="https://s3.amazonaws.com/versesavatars/{{profile.avatar}}" /></span><span class="profile-name">{{#if profile.name}}{{profile.name}}{{else}}---{{/if}}</span><span class="profile-username">{{username}}</span><span class="profile-email">{{emails.[0].address}}</span><span class="profile-created">{{profile.created}}</span><span class="profile-progress">{{profile.progressPercent}}%</span></a></li>
+		{{/each}}
+	</ul>
+</template>
+
+<template name="signup_email_tmpl">
+	{{#each signupEmail}}
+		{{email}}<br />
+	{{/each}}
+</template>
+
+<template name="user_email_tmpl">
+	{{#each userEmail}}
+		{{profile.email}}<br />
+	{{/each}}
+</template>
+
+<template name="search_user_tmpl">
+	<div id="logged-in-container">
+		<div id="top-container">
+			<form id="search-user">
+				<input type="text" placeholder="Find a user" id="user-input-search" />
+				<input type="submit" class="submit-user" value="" />
+			</form>
+		</div>
+		<div id="content-container" class="admin-container search-user">
+			{{#if queryLoaded}}
+				{{> search_results_tmpl}}
+			{{else}}
+				<div class="loading"><img src="/images/loader.gif" width="25" /></div>
+			{{/if}}
+		</div>
+	</div>
+</template>
+
+<template name="search_results_tmpl">
+	{{#if user}}
+	<div class="top-search-info">
+		<span class="query-info">Search results for "<strong>{{query}}</strong>"</span>
+		<span class="query-count">Showing <strong>{{queryCount}}</strong> results</span>
+	</div>
+	<ul>
+		{{#each user}}
+			<li><a href="/u/{{username}}" class="user-link white-content-box"><span class="profile-image"><img src="https://s3.amazonaws.com/versesavatars/{{profile.avatar}}" /></span><span class="profile-username">{{#if profile.name}}{{profile.name}}{{else}}{{username}}{{/if}}</span></a><a href="#" data-user="{{_id}}" class="follow-user gray-gradient{{#if following}} green-gradient{{/if}}">Follow{{#if following}}ing{{/if}}</a></li>
+		{{/each}}
+	</ul>
+	{{else}}
+		
+		<div id="no-users">No matches found</div>
+		<div id="invite-users">
+			<a href='#' class="invite-friends"><span></span>Invite them</a>
+		</div>
+	{{/if}}
+</template>
+
+<template name="mobile_login_tmpl">
+	<div class="top-mobile">
+		<span>Listen to audio books and collect points</span>
+		<ul>
+			<li><img src="/images/iPhone.png" /></li>
+		</ul>
+	</div>
+	<div class="bottom-mobile">
+		<a href="" class="mobile-sign-up gray-gradient">Sign up</a>
+		<a href="" class="mobile-sign-in blue-gradient">Sign in</a>
+	</div>
+</template>

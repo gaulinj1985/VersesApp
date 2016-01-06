@@ -1,0 +1,1023 @@
+/* RESPONSIVE */
+
+@media (max-width: 1170px) {
+	#logged-in-container #content-container .book-box h3, .overlay-content .book-box h3{
+		font-size: 1.125em;
+	}
+	.book-box .book-right{
+		margin-left: 5%;
+	}
+
+	#account-container #right-container{
+		width: 77%;
+	}
+
+	#account-container .input-x-small{
+		width: 32.3%;
+	}
+
+	#account-container #upper-right h1{
+		width:50%;
+	}
+
+	#progress #canvas, #progress #donut{
+		float: none;
+		display: block;
+		margin:0px auto;
+	}
+
+	#progress #progress-legend{
+		width:100%;
+	}
+}
+
+@media (max-width: 1150px) {
+	.top-content .top-title-image{
+		background-size: 100%;
+		background-position: 50% 0px;
+	}
+}
+
+@media (max-width: 1100px) {
+	#progress-percent, #progress, #progress-percent{
+		width: 100%;
+	}
+
+	#progress #canvas, #progress #donut{
+		float: left;
+	}
+
+	#progress #progress-legend{
+		width: 70%;
+	}
+}
+
+@media (max-width: 1000px) {
+	#logged-in-container #content-container .book-box-general, .overlay-content .book-box{
+		width: 48%;
+	}
+
+	#logged-in-container #content-container .book-box-general:nth-child(3n){
+		margin-right: 2%;
+	}
+
+	#logged-in-container #content-container .book-box-general:nth-child(2n){
+		margin-right: 0;
+	}
+
+	#logged-in-container #content-container .book-box h3, .overlay-content .book-box h3{
+		font-size: 1.5em;
+	}
+	.book-box .book-right{
+		margin-left: 6%;
+	}
+
+	#account-container #upper-right h1{
+		width:47%;
+	}
+
+	#account-container #right-container{
+		width: 75%;
+	}
+
+	#account-container .input-left-container{
+		width: 45%;
+	}
+
+	#account-container #profile-bio{
+		width:53%;
+	}
+
+	#account-container .input-x-small{
+		width:32.1%;
+	}
+
+	#progress #progress-legend{
+		width: 60%;
+	}
+	.content .chart{
+		height: auto;
+		margin-bottom: 60px;
+	}
+}
+
+@media (max-width: 900px) {
+	#logged-in-container #chapters-left-nav .title{
+		margin-bottom: 10px;
+	}
+
+  	#logged-in-container #chapters-left-nav{
+		width: 100%;
+		text-align: center;
+		margin-top: 40px;
+	}
+
+	#logged-in-container #chapters-left-nav .chapter-link, #logged-in-container #chapters-left-nav .chapter-link:nth-child(3n+4){
+		margin-right: 6px;
+		margin-left: 6px;
+		float: none;
+		display: inline-block;
+		position: relative;
+	}
+
+	#logged-in-container #chapters-left-nav .chapter-link:active{
+		top:2px;
+		margin-top: 8px;
+		margin-bottom: 5px;
+	}
+
+	.top-content .intro-img{
+		width:100%;
+		height:235px;
+		background-position: 50% -500px;
+	}
+
+	#account-container #left-container{
+		width:100%;
+		min-height: 50px;
+		margin: 90px 0px 0px;
+	}
+
+	#account-container #left-container #avatar-left-container, #left-container #following-users, #left-container #follower-users{
+		float: left;
+		width: 31%;
+	}
+
+	#account-container #avatar-left-container{
+		padding-bottom: 39px;
+	}
+
+	#account-container #right-container, #account-container .choose-avatar, #account-container .follow-user{
+		width: 100%;
+	}
+
+	#account-container #right-container #upper-right{
+		position: absolute;
+		top:70px;
+		width: 95%;
+	}
+
+	#account-container #following-users h4, #account-container #follower-users h4{
+		margin-top: 0px;
+	}
+
+	#left-container #following-users, #left-container #follower-users{
+		margin-left: 19px;
+	}
+
+	#progress #progress-legend{
+		width: 70%;
+	}
+
+	#billing-invoices .list-head span{
+		font-size: .9em;
+	}
+
+	.content .feature{
+		width:250px;
+		margin:20px;
+	}
+
+	.content.first{
+		margin:90px 0px 100px;
+	}
+}
+
+@media (max-width: 800px) {
+	#logged-in-container #content-container .book-box-general, .overlay-content .book-box{
+		width: 100%;
+	}
+
+	#logged-in-container #content-container .book-box{
+		margin-right: 0;
+	}
+
+	#progress #progress-legend{
+		width: 65%;
+	}
+	.top-content .top-title-image{
+		background-position: 50% 50%;
+	}
+
+}
+
+@media (max-width: 700px) {
+	.top-content .intro-text h1{
+		font-size: 40px;
+	}
+
+	.top-content .intro-text h2{
+		font-size: 18px;
+		line-height: 22px;
+	}
+
+	#account-container #right-container #upper-right{
+		width: 94%;
+	}
+
+	#account-container #upper-right h1{
+		font-size: 2.45em;
+		line-height: 1.3em;
+	    width: 41%;
+	}
+
+	#account-container .input-x-small{
+		width: 32%;
+	}
+
+	#progress #progress-legend{
+		width:100%;
+	}
+
+	#progress #canvas, #progress #donut{
+		float: none;
+		display: block;
+		margin:0px auto;
+	}
+
+	#activity .activity-container em{
+		font-size: 0.875em;
+		line-height: 1.3em;
+		padding-right: 10px;
+	}
+
+	.chest-content{
+		width: 90%;
+		left:auto;
+		margin:0px;
+	}
+
+	.black-overlay{
+		padding:0px 5%;
+	}
+
+	#donate-top h1{
+		font-size: 3em;
+		line-height: 1.1em;
+	}
+
+	/* Invoice */
+	#account-container h2.invoice-title, #account-container .invoice-actions, .invoice-content .content-right, .invoice-content #user-info, .invoice-content #company-info{
+		width: 100%;
+		text-align: center;
+	}
+
+	.invoice-content #company-info{
+		margin:0px 0px 40px 0px;
+	}
+
+	.invoice-content #details, .invoice-content .content-left{
+		width: 100%;
+	}
+
+	.invoice-content .content-left{
+		margin-top: 30px;
+	}
+
+	.invoice-content #company-logo, .invoice-content #user-info, .invoice-content #company-info{
+		float: none;
+		margin-left: 0px;
+	}
+
+	#account-container.invoice-page h2{
+		font-size: .9em;
+	}
+
+	#account-container .invoice-actions{
+		padding-bottom: 30px;
+	}
+
+	#invoice-container .close, #invoice-container .print{
+		margin:0px 5px;
+		float: none;
+		display: inline-block;
+	}
+
+	.invoice-content .content-bottom table.invoice-table tr td .total-table td{
+		width: 10%;
+	}
+
+	.invoice-content .content-bottom table.invoice-table tr td .total-table td.right{
+		width: 90%;
+	}
+
+	.content h2, .post-banner h1{
+		padding-top: 35px;
+	}
+	
+	#badges{
+		text-align: center;
+	}
+	
+	/* Header */
+	header .mobile-menu{
+		display: block
+	}
+
+	header .store-container-mobile{
+		display: block
+	}
+
+	header #user-account-container.account-logged-in, header .logo.account-logged-in, header #top-search-user, .store-container{
+		display: none;
+	}
+
+	nav ul li ul li a.my-search, nav ul li ul li a.home{
+		display: block;
+	}
+
+	#header-container .total-points{
+		margin-right: 0px;
+	}
+
+	#header-container .total-points.star-points, #header-container .total-points.streak-points{
+		margin-right: 18px;
+	}
+}
+
+@media (max-width: 650px) {
+	.top-banner-img, .top-banner{
+		min-height: 600px;
+	}
+
+	.top-content .intro-text{
+		padding-bottom: 45px;
+	}
+
+	#donate-top h2{
+		width: 100%;
+	}
+
+	header #top-search-user{
+		width: 135px;
+	}
+}
+
+@media (max-width: 600px) {
+	a{-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color: transparent;}
+
+	.loading-outer .loading-gears{
+		display: block;
+	}
+	/* Landing */
+	.second-banner, .third-banner{
+		background-size: auto 100%;
+	}
+
+	.third-banner{
+		background-position: 70% 0%;
+	}
+
+
+	/* Chapter content */
+	#logged-in-container #top-container h1{
+		font-size: 1.7em;
+	}
+
+	#logged-in-container #top-container span{
+		font-size: 1.4em;
+		padding: 44px 0px 0px;
+	}
+
+	#logged-in-container #chapters-right #chapter-title{
+		display: none;
+	}
+
+	#logged-in-container #constant-audio {
+	    left: -2px;
+	    position: fixed;
+	    right: -2px;
+	    top: 41px;
+	    z-index: 215;
+	}
+
+	#audio-container #jp_container_1 .jp-play, #audio-container #jp_container_1 .jp-pause{
+		margin-left: 20px;
+	}
+
+	#logged-in-container.book-screen #top-container{
+		margin-top: 90px;
+	}
+
+	#logged-in-container #chapters-right #chapter-title-right span.title, #coins-remaining i, .audio-coin, #logged-in-container #chapters-right .chapter-badges-container{
+		float: none;
+	}
+
+	#coins-remaining{
+		padding-top: 3px;
+	}
+
+	#coins-remaining i, .audio-coin{
+		display: inline-block;
+		width: auto;
+		margin-left: 5px;
+	}
+
+	.audio-coin{
+		width: 17px;
+		margin-left: 0px;
+		position: relative;
+	}
+
+	.audio-coin b, .audio-coin em, .audio-coin span{
+		top:5px;
+		left:0px;
+	}
+
+	#logged-in-container #content-container{
+		padding:25px 0px;
+	}
+
+	#logged-in-container #chapters-right #chapter-info-left, #logged-in-container #chapters-right, #logged-in-container #chapters-right #chapter-title-right, #logged-in-container #chapters-right .chapter-badges-container, #logged-in-container #chapters-right #tab-btns{
+		width: 100% !important;
+		text-align: center;
+	}
+
+	#logged-in-container #chapters-right #tab-btns{
+		margin-top: 25px;
+	}
+
+	#logged-in-container #chapters-right #chapter-title-right #complete-badge, #logged-in-container #chapters-right #chapter-title-right #total-complete-badge{
+		float: none;
+		display: inline-block;
+		margin:0px 3px 20px;
+	}
+
+	#logged-in-container #chapters-right #questions-verses-container{
+		text-align: left;
+	}
+
+	#logged-in-container #chapters-right .chapter-questions-btn, #logged-in-container #chapters-right .chapter-verses-btn{
+		float: none;
+		display: inline-block;
+		margin:0px 4px;
+	}
+
+	#logged-in-container #chapters-right .chapter-questions-btn.selected, #logged-in-container #chapters-right .chapter-verses-btn.selected, #logged-in-container #chapters-right .chapter-questions-btn:active, #logged-in-container #chapters-right .chapter-verses-btn:active{
+		top:2px;
+	}
+
+	.book-box .book-right{
+		margin-left: 5%;
+	}
+
+	#logged-in-container #content-container .book-box h3, .overlay-content .book-box h3{
+		font-size: 1.1em;
+	}
+
+	/* Profile */
+
+	#account-container #right-container #upper-right, #left-container #following-users, #left-container #follower-users{
+		display: none;
+	}
+
+	#account-container #left-container{
+		margin-top: 0px;
+		text-align: center;
+	}
+
+	#account-container #left-container #avatar-left-container{
+		float: none;
+		margin: 0px auto;
+		text-align: center;
+		width: 100%;
+	}
+
+	.profile-pic-container{
+		margin-bottom: 5px;
+	}
+
+	.mobile-user-details{
+		display: block;
+	}
+
+	.mobile-user-details h1{
+		font-size: 1.5em;
+		color: #a1a1a1;
+		font-family: Open Sans, arial;
+		padding-bottom: 7px;
+		font-weight: 700;
+	}
+
+	.mobile-user-details span{
+		color: #a1a1a1;
+		font-family: Open Sans, arial;
+		font-weight: 300;
+	}
+
+	.mobile-user-details strong{
+		width:100%;
+		padding:3px 0 5px;
+		display: block;
+	}
+
+	.mobile-user-details strong b{
+		font-size: .9em;
+		color: #B1B1B1;
+		font-family: Open Sans, arial;
+		font-weight: 700;
+		display: inline-block;
+		height: 20px;
+		vertical-align: top;
+		line-height: 1.3em;
+	}
+
+	.mobile-user-details strong span{
+		background: url("images/sprite.png") no-repeat -325px -105px;
+		display: inline-block;
+	    height: 20px;
+	    width: 20px;
+	    margin-right: 4px;
+	}
+
+	#account-container .input-left-container, #account-container #profile-bio, #account-container .input-x-small{
+		width: 100%;
+	}
+
+	.profile-pic-container, #account-container .choose-avatar, #account-container .follow-user{
+		float: none;
+		display: inline-block;
+	}
+
+	#account-container .choose-avatar, #account-container .follow-user{
+		margin-top: 15px;
+		width:70%;
+	}
+
+	#account-container .input-x-small{
+		margin-bottom: 10px;
+	}
+
+	#account-container .save-profile{
+		width: 100%;
+	}
+
+	.activity-avatar{
+		display: none;
+	}
+
+	#account-container h2.account-info-h2, #account-container h2.donated-h2{
+		padding-top: 0px;
+	}
+
+	#account-container.account #left-container, #account-container.billing-page #left-container, #account-container.invoice-page #left-container{
+		display: none;
+	}
+
+	#billing-invoices .amount, #billing-invoices .amount-title{
+		width:15%;
+	}
+
+	#billing-invoices .created, #billing-invoices .created-title{
+		width: 20%;
+	}
+
+	#billing-invoices .card-type, #billing-invoices .card-type-title{
+		display: none;
+	}
+
+	#billing-invoices .card-number, #billing-invoices .card-number-title{
+		width:30%;
+	}
+
+	#billing-invoices .card-exp, #billing-invoices .card-exp-title{
+		width:18%;
+	}
+
+	ul.item-store-drop .show-all{
+		display: none;
+	}
+
+	ul.item-store-drop li span.item-title{
+		margin-top: 6px;
+	}
+
+	ul.item-store-drop li.hide{
+		display: block;
+	}
+
+	/* Landing */
+
+	
+
+	.overlay-content, .overlay-content.star-overlay, .overlay-content.complete-overlay, .overlay-content.finished-overlay, .overlay-content.email-signup-overlay, .overlay-content.tour-container{
+		width:90%;
+		-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+		-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+		box-sizing: border-box;
+		left:auto;
+		margin-left: 0px;
+		top:15%;
+	}
+
+	/* Footer */
+
+	.uv-icon.uv-bottom-right{
+		display: none;
+	}
+
+	footer #copyright, footer #footer-nav{
+		width: 100%;
+		text-align: center;
+	}
+
+	footer #copyright{
+		padding-bottom: 10px;
+	}
+
+	footer .footer-logo, footer #footer-nav ul li{
+		float: none;
+	}
+
+	footer .footer-logo{
+		margin-top: 10px;
+		display: inline-block;
+	}
+
+	footer #copyright span{
+		width: 100%;
+		text-align: center;
+	}
+
+	footer #footer-nav ul li{
+		display: inline;
+		margin:0px 10px;
+	}
+}
+
+@media (max-width: 500px) {
+	#billing-invoices .card-exp, #billing-invoices .card-exp-title{
+		display: none;
+	}
+
+	#billing-invoices .created, #billing-invoices .created-title{
+		width: 29%;
+	}
+
+	#billing-invoices .card-number, #billing-invoices .card-number-title{
+		width: 40%;
+	}
+
+	#billing-invoices .amount, #billing-invoices .amount-title{
+		width: 18%;
+	}
+
+	#progress #progress-legend span{
+		width: 33%;
+	}
+
+	#activity .activity-container{
+		padding-left: 20px;
+	}
+
+	#activity .activity-container .activity-text{
+		padding:15px 0px;
+	}
+
+	.top-banner-img, .top-banner{
+		min-height: 500px;
+	}
+
+	.top-content .intro-text{
+		padding-top: 110px;
+	}
+
+	.top-content .top-title-image{
+		background-position: 50% 0px;
+	}
+
+	.content h2, .post-banner h1{
+		font-size: 1.5em;
+	}
+
+	.content.second p, .post-banner p, .content.third p{
+		font-size: .9em;
+	}
+
+	.overlay-content.email-signup-overlay .email-input, .overlay-content.email-signup-overlay .email-send{
+		width: 100%;
+		margin:0px;
+	}
+
+	.overlay-content.email-signup-overlay .email-send{
+		margin-top:10px;
+	}
+
+	.top-search-info .query-info, .top-search-info .query-count{
+		float: none;
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		line-height: 1.3em;
+	}
+
+}
+
+@media (max-width: 400px) {
+
+	.overlay-content p{
+		font-size: 1.6em;
+	}
+
+	.top-banner-img, .top-banner{
+		min-height: 850px;
+	}
+
+	.top-content .top-title-image{
+		background-image: url("images/iPhone.png");
+		height: 600px;
+	}
+
+
+	.top-content .intro-text h1{
+		font-size: 34px;
+	}
+
+	.top-content .intro-text h2{
+		font-size: 16px;
+	}
+
+	.top-banner p, .content p{
+		font-size: 1.2em;
+		line-height: 1.2em;
+	}
+	#billing-invoices .card-number, #billing-invoices .card-number-title{
+		display: none;
+	}
+
+	.overlay-content, .overlay-content.star-overlay, .overlay-content.complete-overlay, .overlay-content.finished-overlay{
+		top:10%;
+	}
+
+	#progress #progress-legend span{
+		width: 50%;
+	}
+
+	.book-box .book-right{
+		max-width:55%;
+	}
+
+	#site-container .not-unlocked span{
+		font-size: 24px;
+		line-height: 28px;
+	}
+
+
+	#logged-in-container #content-container .book-box h3, .overlay-content .book-box h3 {
+	    float: left;
+	    font-size: 1.1em;
+	    overflow: hidden;
+	    white-space: nowrap;
+	    width: 100%;
+	    text-overflow:ellipsis;
+	}
+
+	.question-container .answers-container{
+		text-align: center;
+	}
+
+	.question-container .answer, .question-container .incorrect-answer .recycle-container, .question-container .incorrect-answer .recycle-answer, .question-container.complete-true .recycle-answer{
+		float: none;
+		display: inline-block;
+		width: 100%;
+	}
+
+	.question-container .answer{
+		line-height: 16px;
+		padding:8px 11px 9px;
+		height:auto;
+		margin-bottom: 13px;
+	}
+
+	.question-container h4{
+		font-size: 1.1em;
+	}
+
+	.question-container .incorrect-answer .recycle-answer, .question-container.complete-true .recycle-answer{
+		font-size: 0.8em;
+		padding-right:5px;
+		padding-left:5px;
+	}
+
+	.question-container .incorrect-answer .error{
+		width: 100%;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
+	.star-content h2{
+		font-size: 1.2em;
+	}
+
+	.star-content h3{
+		font-size: 1em;
+	    line-height: 1.2em;
+	}
+
+	.star-overlay #star-banner-cover{
+		padding-top: 40px;
+	}
+
+	#top-star-banner{
+		height:200px;
+	}
+
+	.star-overlay .star-win{
+		width: 130px;
+		height:130px;
+		background-size: 130px;
+	}
+
+	#billing-invoices .amount, #billing-invoices .amount-title{
+		width: 34%;
+	}
+
+	#billing-invoices .created, #billing-invoices .created-title{
+		width: 50%;
+	}
+
+	#invoice-container .description, #invoice-container .info-invoice-id{
+		display: none;
+	}
+
+	#account-container.invoice-page h2{
+		padding-top: 0px;
+	}
+
+	#donated-container, #card-container, #billing-card .card-info, #total-donated, .donate-containers{
+		width: 100%;
+	}
+
+	#donate-top h1{
+		font-size: 2.2em;
+		line-height: 1.1em;
+	}
+
+	.donate-containers{
+		padding:40px 30px;
+	}
+
+	#card-change-form .card-number{
+		width: 73%;
+	}
+
+	#card-change-form .card-cvc{
+		width: 22%;
+	}
+
+	#card-change-form .card-month{
+		width: 21%;
+	}
+
+	#card-change-form .card-year{
+		width: 27%;
+	}
+
+	.chest-content .choice, .choice .choose-item{
+		width: 90%;
+	}
+
+	.chest-content .choice-content{
+		width: 200px;
+	}
+
+	.chest-content h1, .keys-content h1, .chest-error h1{
+		font-size: 1.4em;
+	}
+}
+@media (max-width: 350px) {
+	.post-banner{
+		height: 250px;
+	}
+
+	.post-banner .upper-post{
+		height: 223px;
+	}
+
+	.tour-container .book-box .book-lock{
+		display: none;
+	}
+	.sign-up-btn, .sign-in-btn{
+		width: 55px;
+		line-height: 28px;
+		font-size: 11px;
+	}
+	.streak-container .streak-reward{
+		margin-top: 10px;
+	}
+}
+
+/* Retina Responsive */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+
+    html, body{
+    	font-size: 105%;
+    }
+
+    .book-left .book-icon{
+    	background-image: url(images/book-icons-blank-retina.png) !important;
+    	background-size: 290px 809px !important;
+    }
+
+    .book-left.started .book-icon, .unlock-overlay-content .book-icon{
+		background-image: url(images/book-icons-retina.png) !important;
+		background-size: 290px 809px !important;
+	}
+
+	.book-box.total-complete .book-icon{
+		background-image: url(images/book-icons-complete-retina.png) !important;
+		background-size: 290px 809px !important;
+	}
+
+	header .mobile-menu{
+		background-image: url(images/mobile-sprite-retina.png) !important;
+		background-size: 28px 24px !important;
+	}
+
+    #header-container .coin, #header-container .star,  header .top-search-icon, .question-container .did-you-know-container span, 
+    nav ul li ul li a span.home, nav ul li ul li a span.activity, nav ul li ul li a span.account, .unlock-overlay-content .star, 
+    nav ul li ul li a span.billing, nav ul li ul li a span.sign-out, .left-menu ul li a span, #logged-in-container #content-container .locked-book b, 
+    #account-container.public-profile #upper-right h2 span, .book-box .stars-container b, .book-box .coins-container b, .overlay-content.tour-container .rewards span,
+    #logged-in-container #content-container .book-box .progress-badge .badge-key, .choices-container-mobile .prev, .choices-container-mobile .next,
+    #logged-in-container #chapters-left-nav .chapter-link .complete-badge, #logged-in-container #chapters-left-nav .chapter-link .total-complete-badge,
+    #logged-in-container #chapters-right #chapter-title-right #complete-badge, #logged-in-container #chapters-right #chapter-title-right #total-complete-badge,
+    #audio-container #jp_container_1 .jp-play, #audio-container #jp_container_1 .jp-pause,.book-box .book-lock b,#site-container .not-unlocked strong,
+    .audio-coin b, .audio-coin em, .newCoin, .audio-coin span, #chapters-right #chest-items span, .question-container-left .points-remaining, .points-remaining-new,
+    .question-container.complete-true .question-container-left .points-remaining, .question-container.wrong-true .question-container-left .points-remaining,
+    .question-container-left .lives-remaining, .question-container-left .heart, .heart-new, .question-container .incorrect-answer .special-recycler span,
+    .question-container .incorrect-answer strong, #audio-not-complete .not-complete-icon, #audio-not-complete .count-icon, .overlay-content .close, .black-overlay .close,
+    .chest-content .chest-item, #account-container .email-container span, .email-verified .close,.activity-icon.special-item .item,
+    #activity .activity-container .gained-coins span, #activity .activity-container .gained-badge span,.mobile-user-details strong span,
+    #activity .like span.like-icon, #top-container.admin-head a span, #search-user .submit-user, .search-user .invite-friends span, #activity .coins-earned span,
+    header #item-store, ul.item-store-drop li a.item b, ul.item-store-drop li a.item span, ul.item-store-drop li .item-locked strong, #header-container .coin, #header-container .star, 
+    #header-container .streak, nav ul li ul li a span.home, nav ul li ul li a span.profile, nav ul li ul li a span.settings, nav ul li ul li a span.billing, nav ul li ul li a span.search, nav ul li ul li a span.sign-out{
+    	background-image: url(images/sprite-retina.png) !important;
+    	background-size: 621px 382px !important;
+    }
+
+    .activity-icon.book{ 
+		background-image: url(images/book-icons-activity-retina.png) !important;
+		background-size: 170px auto !important;
+	}
+
+	header .logo{
+		background-image: url(images/logo-retina.png) !important;
+		background-size: 128px 30px !important;
+	}
+
+	footer .footer-logo{
+		background-image: url(images/footer-logo-retina.png) !important;
+		background-size: 88px 24px !important;
+	}
+
+	.invoice-content #company-logo{
+		background-image: url(images/logo-large-retina.png) !important;
+		background-size: 171px 49px !important;
+	}
+
+	.top-content .intro-img{
+		background-image: url(images/intro-retina.png) !important;
+		background-size: 910px 1440px !important;
+	}
+
+	.content .feature span{
+		background-image: url(images/landing-imgs-retina.png) !important;
+		background-size: 134px 450px !important;
+	}
+
+	#badges .badge, .finished-overlay .finished-win, .complete-overlay .complete-win{
+		background-image: url(images/badges-retina.png) !important;
+		background-size: 767px 603px !important;
+	}
+
+	.activity-badge{
+		background-image: url(images/badges-activity-retina.png) !important;
+		background-size: 388px 301px !important;
+	}
+
+	ul.item-store-drop li span.item-title{
+		background-image: url(images/item-shop-retina.png) !important;
+		background-size: 150px 37px !important;
+	}
+
+	.star-overlay .star-win{
+		background-image: url(images/star-retina.png) !important;
+		background-size: 120px 117px !important;
+	}
+
+	#activity .coins-earned{
+		line-height: 2.3em;
+	}
+
+	#activity .like span{
+		margin-top: 2px;
+	}
+
+	.mobile-user-details strong b{
+		line-height: 1.5em;
+	}
+
+	.left-menu ul li a span.sign-out.signing-out{
+		background: url(images/small-loader-mobile.gif) no-repeat !important;
+	}
+}
