@@ -24,7 +24,7 @@ if (Meteor.isClient) {
 
   Meteor.startup( function() {
       filepicker.setKey("AaMxd4HMjRK2gsK9GLmEXz");
-      Stripe.setPublishableKey('pk_live_oGOE112l6Mu0uMADvi6QnIrr');
+      //Stripe.setPublishableKey('pk_live_oGOE112l6Mu0uMADvi6QnIrr');
       $(function(){
         var os = navigator.platform.toLowerCase();
         if( os.indexOf('mac') != -1){
