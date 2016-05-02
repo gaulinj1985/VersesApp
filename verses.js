@@ -1246,6 +1246,12 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.search_user_tmpl.helpers({
+    queryLoaded: function () {
+      return Session.get('userSearchQuery')
+    }
+  });
+
   Template.credit_form_tmpl.helpers({
     loggedIn: function () {
       return Session.get('loggedIn')
